@@ -1,0 +1,6 @@
+#ifndef WINDOW_HPP_INCLUDED
+#define WINDOW_HPP_INCLUDED
+
+
+
+#endif // WINDOW_HPP_INCLUDED
