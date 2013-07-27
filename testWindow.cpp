@@ -51,7 +51,7 @@ int main()
         throw runtime_error("Window creation failed.");
     }
 
-    win.setActive();
+    win.makeActive();
 
     // GLEW init
     glewExperimental = GL_TRUE; // include all the fancy features!
@@ -98,6 +98,16 @@ int main()
 
         win.swapBuffers();
         glfwPollEvents();
+
+        // test various methods taking input from the user
+        string title;
+        cout<<"set title: ";
+        cin>>title;
+        win.setTitle(title);
+        cout<<"set pos: ";
+        ivec2 pos;
+        cin>>pos.x>>pos.y;
+        win.setPos(pos);
     }
 
     glfwTerminate();

@@ -33,16 +33,39 @@ namespace sre
                std::string title="OpenGL",
                Monitor monitor = Monitor( nullptr ),
                Window share = Window( nullptr ) );
-        void setActive();
-        void swapBuffers();
+        // get
+        GLFWwindow * getGLFWwindow() { return this->window; }
         ivec2 getFramebufferSize()
         {
             ivec2 size;
             glfwGetFramebufferSize( this->window, &size.x, &size.y );
             return size;
         }
-        bool exists();
-        GLFWwindow * getGLFWwindow() { return this->window; }
+        // bool get
+        std::string getTitle () const;
+        ivec2 getPos () const;
+        ivec2 getSize () const;
+
+        bool exists () const;
+        bool shouldClose () const;
+
+        // set
+        void setTitle( std::string title);
+        void setPos ( int xPos, int yPos );
+        void setPos ( ivec2 pos);
+        void setSize ( int xSize, int ySize );
+        void setSize ( ivec2 size );
+
+        // set command
+        void makeActive ();
+        void iconify ();
+        void restore ();
+        void show ();
+        void hide ();
+        bool shouldClose ( bool tf );
+        void swapBuffers ();
+
+        // callbacks
 
     };
 }
