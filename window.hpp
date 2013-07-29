@@ -3,19 +3,20 @@
 
 #include <GLFW/glfw3.h>
 #include <string>
+#include <map>
 #include "include/hints.hpp"
 #include <glm/glm.hpp>
 
 namespace sre
 {
-    using namespace glm;
+    using glm::ivec2;
     // !! temp !!
     class Monitor
     {
         GLFWmonitor * monitor;
     public:
         Monitor ( GLFWmonitor * monitor ) { this->monitor = monitor; }
-        GLFWmonitor * getGLFWMonitor() { return this->monitor; }
+        GLFWmonitor * getGLFWMonitor() const { return this->monitor; }
 
         static Monitor getPrimaryMonitor ()
         {
@@ -27,33 +28,34 @@ namespace sre
     class Window
     {
         GLFWwindow * window;
+
     public:
+        // static methods
+        static void init();
+        // constructors
         Window ( GLFWwindow * window );
-        Window ( int width=640, int height=480,
-               std::string title="OpenGL",
-               Monitor monitor = Monitor( nullptr ),
-               Window share = Window( nullptr ) );
+        Window ( const int width=640, const int height=480,
+               const std::string & title="OpenGL",
+               const Hints & hints = DefaultHints(),
+               const Monitor & monitor = Monitor( nullptr ),
+               const Window & share = Window( nullptr ) );
         // get
-        GLFWwindow * getGLFWwindow() { return this->window; }
-        ivec2 getFramebufferSize()
-        {
-            ivec2 size;
-            glfwGetFramebufferSize( this->window, &size.x, &size.y );
-            return size;
-        }
-        // bool get
-        std::string getTitle () const;
+        GLFWwindow * getGLFWwindow();
+        ivec2 getFramebufferSize() const;
+
+        //std::string getTitle () const;
         ivec2 getPos () const;
         ivec2 getSize () const;
+        ivec2 getFramebufferSize ();
 
         bool exists () const;
-        bool shouldClose () const;
+        int shouldClose () const;
 
         // set
         void setTitle( std::string title);
         void setPos ( int xPos, int yPos );
         void setPos ( ivec2 pos);
-        void setSize ( int xSize, int ySize );
+        void setSize ( int width, int height );
         void setSize ( ivec2 size );
 
         // set command
@@ -62,11 +64,10 @@ namespace sre
         void restore ();
         void show ();
         void hide ();
-        bool shouldClose ( bool tf );
+        int shouldClose ( int gl_tf );
         void swapBuffers ();
 
         // callbacks
-
     };
 }
 

@@ -31,7 +31,7 @@ const char* fragmentSource =
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-glfwSetWindowShouldClose(window, GL_TRUE);
+    glfwSetWindowShouldClose( window, GL_TRUE );
 }
 
 int main()
@@ -42,10 +42,24 @@ int main()
     // GLFW init
     if( !glfwInit() )
         return 1;
+    // Window::init()
 
     // create Window
-    DefaultHints().apply();
-    Window win = Window();
+    DefaultHints defhints = DefaultHints();
+    defhints.apply();
+
+    WindowHints winHints = WindowHints();
+    winHints.resizable(true);
+    winHints.visible(true);
+    winHints.decorated(true);
+
+    FramebufferHints fbHints = FramebufferHints();
+
+
+    Hints * hints;
+    hints = &fbHints;
+
+    Window win = Window( 640, 480, "OpenGL", *hints );
     if ( !win.exists() )
     {
         throw runtime_error("Window creation failed.");
@@ -78,8 +92,12 @@ int main()
 
     glfwSetKeyCallback(win.getGLFWwindow(), key_callback);
     // main loop
-    while( !glfwWindowShouldClose(win.getGLFWwindow()) )
+    while( !win.shouldClose() )
     {
+        string title;
+        ivec2 pos;
+        ivec2 size;
+
         glEnableVertexAttribArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
         glVertexAttribPointer(
@@ -97,17 +115,34 @@ int main()
         glDisableVertexAttribArray(0);
 
         win.swapBuffers();
-        glfwPollEvents();
 
         // test various methods taking input from the user
-        string title;
+
         cout<<"set title: ";
         cin>>title;
         win.setTitle(title);
+
         cout<<"set pos: ";
-        ivec2 pos;
         cin>>pos.x>>pos.y;
         win.setPos(pos);
+
+        cout<<"set size: ";
+        cin>>size.x>>size.y;
+        win.setSize(size);
+
+        cout<<endl;
+
+        // spit out what the window is now
+        cout<<"Window Values..."<<endl;
+
+        pos = win.getPos();
+        cout<<"pos: "<<pos.x<<" "<<pos.y<<endl;
+        size = win.getSize();
+        cout<<"size: "<<size.x<<" "<<size.y<<endl;
+
+        cout<<endl;
+
+        glfwPollEvents();
     }
 
     glfwTerminate();
