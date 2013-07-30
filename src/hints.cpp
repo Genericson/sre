@@ -123,34 +123,44 @@ namespace sre
     // class WindowHints
     WindowHints::WindowHints()
     {
-        insert( Hint( RESIZABLE, true ) );
-        insert( Hint( VISIBLE, true ) );
-        insert( Hint( DECORATED, true ) );
+        // set default values
+        resizable(true);
+        visible(true);
+        decorated(true);
     }
-//    void WindowHints::apply() const
-//    {
-//        glfwWindowHint( GLFW_RESIZABLE, _resizable );
-//        glfwWindowHint( GLFW_VISIBLE, _visible );
-//        glfwWindowHint( GLFW_DECORATED, _decorated );
-//    }
 
-    void FramebufferHints::apply() const
+    // class FrameBufferHints()
+    FramebufferHints::FramebufferHints()
     {
-        glfwWindowHint( GLFW_RED_BITS, _redBits );
-        glfwWindowHint( GLFW_BLUE_BITS, _blueBits );
-        glfwWindowHint( GLFW_GREEN_BITS, _greenBits );
-        glfwWindowHint( GLFW_ALPHA_BITS, _alphaBits );
-        glfwWindowHint( GLFW_DEPTH_BITS, _depthBits );
-        glfwWindowHint( GLFW_STENCIL_BITS, _stencilBits );
-        glfwWindowHint( GLFW_ACCUM_RED_BITS, _accumRedBits );
-        glfwWindowHint( GLFW_ACCUM_GREEN_BITS, _accumGreenBits );
-        glfwWindowHint( GLFW_ACCUM_BLUE_BITS, _accumBlueBits );
-        glfwWindowHint( GLFW_ACCUM_ALPHA_BITS, _accumAlphaBits );
-        glfwWindowHint( GLFW_AUX_BUFFERS, _auxBuffers );
-        glfwWindowHint( GLFW_SAMPLES, _samples );
-        glfwWindowHint( GLFW_REFRESH_RATE, _refreshRate );
-        glfwWindowHint( GLFW_STEREO, _stereo );
-        glfwWindowHint( GLFW_SRGB_CAPABLE, _sRGBCapable );
+        // set default values
+        redBits(8);
+        greenBits(8);
+        blueBits(8);
+        alphaBits(8);
+        depthBits(24);
+        stencilBits(8);
+        accumRedBits(0);
+        accumGreenBits(0);
+        accumBlueBits(0);
+        accumAlphaBits(0);
+        auxBuffers(0);
+        samples(0);
+        refreshRate(0);
+        stereo(false);
+        sRGBCapable(false);
+    }
+
+    // class ContextHints
+    ContextHints::ContextHints()
+    {
+        // set default values
+        setAPIGL();
+        versionMajor(1);
+        versionMinor(1);
+        setNoRobustness();
+        forwardCompat(false);
+        debug(false);
+        setProfileAny();
     }
 
 } // namespace sre

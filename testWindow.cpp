@@ -67,11 +67,35 @@ int main()
     winHints.visible(1);
     winHints.decorated(1);
 
+    // test for Framebuffer methods
     FramebufferHints fbHints = FramebufferHints();
+//    fbHints.redBits(1);
+//    fbHints.greenBits(1);
+//    fbHints.blueBits(1);
+//    fbHints.alphaBits(1);
+//    fbHints.depthBits(1);
+//    fbHints.stencilBits(1);
+//    fbHints.accumRedBits(1);
+//    fbHints.accumGreenBits(1);
+//    fbHints.accumBlueBits(1);
+//    fbHints.accumAlphaBits(1);
+//    fbHints.auxBuffers(1);
+//    fbHints.samples(1);
+//    fbHints.refreshRate(30);
+//    fbHints.stereo(true);
+//    fbHints.sRGBCapable(true);
 
+    // test for ContextHints
+    ContextHints cHints = ContextHints();
+    //cHints.setAPIES();
+    cHints.versionMajor(3);
+    cHints.versionMinor(3);
+    //cHints.forwardCompat(true);
+    //cHints.debug(false);
+    cHints.setProfileAny();
 
     Hints * hints;
-    hints = &winHints;
+    hints = &cHints;
     Window unatomicWin = Window( 640, 480, "OpenGL", *hints );
     win.store(&unatomicWin);
     if ( !win.load()->exists() )
