@@ -7,6 +7,9 @@
 #include <string>
 #include <iostream>
 #include <stdexcept>
+#include <thread>
+#include <atomic>
+#include <sstream>
 
 //#define GLEW_STATIC
 
@@ -28,16 +31,27 @@ const char* fragmentSource =
 	"	outColor = vec4( Color, 1.0 );"
 	"}";
 
+std::atomic< sre::Window *> win (nullptr);
+// thread-safe output buffer for input
+std::atomic< std::stringstream *> inputBuffer (nullptr);
+
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-    glfwSetWindowShouldClose( window, GL_TRUE );
+    glfwSetWindowShouldClose( win.load()->getGLFWwindow(), GL_TRUE );
 }
+
+void input();
+void render();
 
 int main()
 {
     using namespace std;
     using namespace sre;
+
+    // initialize inputBuffer
+    stringstream tempstr;
+    inputBuffer.store(&tempstr);
 
     // GLFW init
     if( !glfwInit() )
@@ -49,23 +63,23 @@ int main()
     defhints.apply();
 
     WindowHints winHints = WindowHints();
-    winHints.resizable(true);
-    winHints.visible(true);
-    winHints.decorated(true);
+    winHints.resizable(1);
+    winHints.visible(1);
+    winHints.decorated(1);
 
     FramebufferHints fbHints = FramebufferHints();
 
 
     Hints * hints;
-    hints = &fbHints;
-
-    Window win = Window( 640, 480, "OpenGL", *hints );
-    if ( !win.exists() )
+    hints = &winHints;
+    Window unatomicWin = Window( 640, 480, "OpenGL", *hints );
+    win.store(&unatomicWin);
+    if ( !win.load()->exists() )
     {
         throw runtime_error("Window creation failed.");
     }
 
-    win.makeActive();
+    win.load()->makeActive();
 
     // GLEW init
     glewExperimental = GL_TRUE; // include all the fancy features!
@@ -90,14 +104,15 @@ int main()
     glBindBuffer( GL_ARRAY_BUFFER, vertexbuffer );
     glBufferData( GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
 
-    glfwSetKeyCallback(win.getGLFWwindow(), key_callback);
+    glfwSetKeyCallback(win.load()->getGLFWwindow(), key_callback);
     // main loop
-    while( !win.shouldClose() )
-    {
-        string title;
-        ivec2 pos;
-        ivec2 size;
 
+    //create and initialize input thread
+    thread textInputThread(input);
+    textInputThread.detach();
+
+    while( !win.load()->shouldClose() )
+    {
         glEnableVertexAttribArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
         glVertexAttribPointer(
@@ -114,33 +129,9 @@ int main()
 
         glDisableVertexAttribArray(0);
 
-        win.swapBuffers();
+        win.load()->swapBuffers();
 
         // test various methods taking input from the user
-
-        cout<<"set title: ";
-        cin>>title;
-        win.setTitle(title);
-
-        cout<<"set pos: ";
-        cin>>pos.x>>pos.y;
-        win.setPos(pos);
-
-        cout<<"set size: ";
-        cin>>size.x>>size.y;
-        win.setSize(size);
-
-        cout<<endl;
-
-        // spit out what the window is now
-        cout<<"Window Values..."<<endl;
-
-        pos = win.getPos();
-        cout<<"pos: "<<pos.x<<" "<<pos.y<<endl;
-        size = win.getSize();
-        cout<<"size: "<<size.x<<" "<<size.y<<endl;
-
-        cout<<endl;
 
         glfwPollEvents();
     }
@@ -148,7 +139,52 @@ int main()
     glfwTerminate();
     cerr<<"end";
 
+    //garbage collection
+
     return 0;
+}
+
+void input()
+{
+    using namespace std;
+
+    string title;
+    glm::ivec2 pos;
+    glm::ivec2 size;
+
+    while (true)
+    {
+        //cout<<"set title: ";
+        cout<<"title: ";
+        cin>>title;
+
+        win.load()->setTitle(title);
+
+        cout<<"set pos: ";
+        cin>>pos.x>>pos.y;
+        win.load()->setPos(pos);
+
+        cout<<"set size: ";
+        cin>>size.x>>size.y;
+        win.load()->setSize(size);
+
+        cout<<endl;
+
+        //spit out what the window is now
+        cout<<"Window Values..."<<endl;
+
+        pos = win.load()->getPos();
+        cout<<"pos: "<<pos.x<<" "<<pos.y<<endl;
+        size = win.load()->getSize();
+        cout<<"size: "<<size.x<<" "<<size.y<<endl;
+
+        cout<<endl;
+    }
+}
+
+void render()
+{
+
 }
 
 #endif // TESTWINDOW_CPP

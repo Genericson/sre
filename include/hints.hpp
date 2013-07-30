@@ -67,6 +67,13 @@ namespace sre
     {
         static void applyHint (const Hints::KEY & key, const int & val );
 
+        protected:
+        struct Hint : public std::pair< Hints::KEY , int>
+        {
+        public:
+            Hint( Hints::KEY key, int val) : std::pair<Hints::KEY, int>( key, val ) {}
+        };
+
         public:
         void apply() const;
     };
@@ -77,17 +84,19 @@ namespace sre
         void apply() const;
     };
 
-    class WindowHints : public Hints
+    class WindowHints : public MapHints
     {
         bool _resizable = true;
         bool _visible = true;
         bool _decorated = true;
     public:
-        void apply() const;
+        WindowHints();
 
-        void resizable ( bool tf ) { _resizable = tf; }
-        void visible ( bool tf ) { _visible = tf; }
-        void decorated ( bool tf ) { _decorated = tf; }
+        //void apply() const;
+
+        void resizable ( bool tf )  { (*this)[RESIZABLE] = tf; }
+        void visible ( bool tf )    { (*this)[VISIBLE] = tf; }
+        void decorated ( bool tf )  { (*this)[DECORATED] = tf; }
     };
 
     class FramebufferHints: public Hints

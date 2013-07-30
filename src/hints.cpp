@@ -40,7 +40,7 @@ namespace sre
             _key = GLFW_ACCUM_ALPHA_BITS; break;
         case AUX_BUFFERS:
             _key = GLFW_AUX_BUFFERS; break;
-        case SAMPLES:
+        case SAMPLES:http://gamesfromwithin.com/stupid-c-tricks-2-better-enums
             _key = GLFW_SAMPLES; break;
         case REFRESH_RATE:
             _key = GLFW_REFRESH_RATE; break;
@@ -99,6 +99,7 @@ namespace sre
             break; //this should never happen!!!
         }
 
+        std::cerr<<"key: "<<key<<"  val: "<<val<<std::endl;
         // Now apply hint using GLFW
         glfwWindowHint( _key, _val);
 
@@ -119,12 +120,19 @@ namespace sre
         glfwDefaultWindowHints();
     }
 
-    void WindowHints::apply() const
+    // class WindowHints
+    WindowHints::WindowHints()
     {
-        glfwWindowHint( GLFW_RESIZABLE, _resizable );
-        glfwWindowHint( GLFW_VISIBLE, _visible );
-        glfwWindowHint( GLFW_DECORATED, _decorated );
+        insert( Hint( RESIZABLE, true ) );
+        insert( Hint( VISIBLE, true ) );
+        insert( Hint( DECORATED, true ) );
     }
+//    void WindowHints::apply() const
+//    {
+//        glfwWindowHint( GLFW_RESIZABLE, _resizable );
+//        glfwWindowHint( GLFW_VISIBLE, _visible );
+//        glfwWindowHint( GLFW_DECORATED, _decorated );
+//    }
 
     void FramebufferHints::apply() const
     {
