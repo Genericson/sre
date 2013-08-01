@@ -2,28 +2,16 @@
 #define WINDOW_HPP
 
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
 #include <string>
 #include <map>
 #include "include/hints.hpp"
-#include <glm/glm.hpp>
+#include "monitor.hpp"
 
 namespace sre
 {
     using glm::ivec2;
     // !! temp !!
-    class Monitor
-    {
-        GLFWmonitor * monitor;
-    public:
-        Monitor ( GLFWmonitor * monitor ) { this->monitor = monitor; }
-        GLFWmonitor * getGLFWMonitor() const { return this->monitor; }
-
-        static Monitor getPrimaryMonitor ()
-        {
-            return Monitor( glfwGetPrimaryMonitor() );
-        }
-    };
-
 
     class Window
     {

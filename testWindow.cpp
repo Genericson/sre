@@ -20,7 +20,7 @@ const char* vertexSource =
 	"in vec3 color;"
 	"out vec3 Color;"
 	"void main() {"
-	"	Color = c./olor;"
+	"	Color = color;"
 	"	gl_Position = vec4( position, 0.0, 1.0 );"
 	"}";
 const char* fragmentSource =
