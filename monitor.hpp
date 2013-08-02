@@ -2,7 +2,6 @@
 #define SRE_MONITOR_HPP
 
 //== includes ==//
-#include <vector>
 #include <list>
 
 //== namespace ==//
@@ -24,6 +23,7 @@ public:
     // ctor
     VideoMode ();
     VideoMode ( const GLFWvidmode * vidmode );
+    VideoMode ( const GLFWvidmode& vidmode);
 
     // get methods
     int width ();
@@ -51,15 +51,21 @@ class Monitor
 {
     GLFWmonitor * monitor;
 public:
+    // ctor
     Monitor ( GLFWmonitor * monitor );
-    GLFWmonitor * getGLFWMonitor() const;
-    static Monitor getPrimaryMonitor ();
 
+    // get methods
+    VideoMode getVideoMode ();
+    std::list<VideoMode> getVideoModes ();
+    GLFWmonitor * getGLFWMonitor() const;
+
+    // set methods
     void setGammaRamp ( GammaRamp gammaRamp );
     void setGamma ( float gamma );
 
-    VideoMode getVideoMode ();
-    std::vector<VideoMode> getVideoModes ();
+    // static methods
+    static Monitor getPrimaryMonitor ();
+
 }; //Monitor
 
 } //namespace sre
