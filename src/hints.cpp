@@ -3,8 +3,113 @@
 namespace sre
 {
 
+    //== Attributes ==//
+    /** This Function converts an Attribute::KEY and value to the GLFW equivalents
+     *  \param[in] attrib The Attribute::KEY to convert.
+     *  \param[in] val The value to convert. This is identical unless the `attrib` has an associated enumeration
+     *  \param[out] attribGLFW Where to save the GLFW attribute identifier.
+     *  \param[out] valGLFW Where to save the GLFW value equivalent.
+     *  \sa \ref window_hints "GLFW window creation hints", \ref window_attribs "GLFW window attributes"*/
+    void Attributes::getGLFWattrib ( const KEY & attrib, const & val, int & attribGLFW, int & valGLFW )
+    {
+         // find GLFW equivalent of key and value
+        int _val = val;
+        int _key;
+
+        switch (attrib)
+        {
+        case RESIZABLE:
+            _key = GLFW_RESIZABLE; break;
+        case VISIBLE:
+            _key = GLFW_VISIBLE; break;
+        case DECORATED:
+            _key = GLFW_DECORATED; break;
+        case RED_BITS:
+            _key = GLFW_RED_BITS; break;
+        case GREEN_BITS:
+            _key = GLFW_GREEN_BITS; break;
+        case BLUE_BITS:
+            _key = GLFW_BLUE_BITS; break;
+        case ALPHA_BITS:
+            _key = GLFW_ALPHA_BITS; break;
+        case DEPTH_BITS:
+            _key = GLFW_DEPTH_BITS; break;
+        case STENCIL_BITS:
+            _key = GLFW_STENCIL_BITS; break;
+        case ACCUM_RED_BITS:
+            _key = GLFW_ACCUM_RED_BITS; break;
+        case ACCUM_GREEN_BITS:
+            _key = GLFW_ACCUM_GREEN_BITS; break;
+        case ACCUM_BLUE_BITS:
+            _key = GLFW_ACCUM_BLUE_BITS; break;
+        case ACCUM_ALPHA_BITS:
+            _key = GLFW_ACCUM_ALPHA_BITS; break;
+        case AUX_BUFFERS:
+            _key = GLFW_AUX_BUFFERS; break;
+        case SAMPLES:http:
+            _key = GLFW_SAMPLES; break;
+        case REFRESH_RATE:
+            _key = GLFW_REFRESH_RATE; break;
+        case STEREO:
+            _key = GLFW_STEREO; break;
+        case SRGB_CAPABLE:
+            _key = GLFW_SRGB_CAPABLE; break;
+        case CLIENT_API:
+            _key = GLFW_CLIENT_API;
+            switch(val)
+            {
+            case OPENGL_API:
+                _val = GLFW_OPENGL_API; break;
+            case OPENGL_ES_API:
+                _val = GLFW_OPENGL_ES_API; break;
+            default:
+                std::cerr<<"Unsupported OpenGL API setting"<<std::endl;
+            }
+            break;
+        case VERSION_MAJOR:
+            _key = GLFW_VERSION_MAJOR; break;
+        case VERSION_MINOR:
+            _key = GLFW_VERSION_MINOR; break;
+        case CONTEXT_ROBUSTNESS:
+            _key = GLFW_CONTEXT_ROBUSTNESS; break;
+            switch(val)
+            {
+            case NO_ROBUSTNESS:
+                _val = GLFW_NO_ROBUSTNESS; break;
+            case NO_RESET_NOTIFICATION:
+                _val = GLFW_NO_RESET_NOTIFICATION; break;
+            case LOSE_CONTEXT_ON_RESET:
+                _val = LOSE_CONTEXT_ON_RESET; break;
+            default:
+                std::cerr<<"Unsupported robustness setting\n"<<std::endl;
+            }
+        case OPENGL_FORWARD_COMPAT:
+            _key = GLFW_OPENGL_FORWARD_COMPAT; break;
+        case OPENGL_DEBUG:
+            _key = GLFW_OPENGL_DEBUG_CONTEXT; break;
+        case OPENGL_PROFILE:
+            _key = GLFW_OPENGL_PROFILE; break;
+            switch(val)
+            {
+            case ANY:
+                _val = GLFW_OPENGL_ANY_PROFILE; break;
+            case OPENGL_COMPAT:
+                _val = GLFW_OPENGL_COMPAT_PROFILE; break;
+            case OPENGL_CORE:
+                _val = GLFW_OPENGL_CORE_PROFILE; break;
+            default:
+                std::cerr<<"Unsupported OpenGL profile"<<std::endl;
+            }
+        default:
+            std::cerr<<"Unsupported key value for applyHint()";
+            break; //this should never happen!!!
+        }
+
+        attribGLFW = _key;
+        valGLFW = _val;
+    }
     // MapHints
-    void MapHints::applyHint ( const Hints::KEY & key, const int & val )
+    void MapHints::applyHint ( const KEY & key, const int & val )
     {
         // find GLFW equivalent of key and use that to call glfwWindowHint
         int _key;
@@ -40,7 +145,7 @@ namespace sre
             _key = GLFW_ACCUM_ALPHA_BITS; break;
         case AUX_BUFFERS:
             _key = GLFW_AUX_BUFFERS; break;
-        case SAMPLES:http://gamesfromwithin.com/stupid-c-tricks-2-better-enums
+        case SAMPLES:
             _key = GLFW_SAMPLES; break;
         case REFRESH_RATE:
             _key = GLFW_REFRESH_RATE; break;

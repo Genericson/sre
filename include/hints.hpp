@@ -1,5 +1,5 @@
-#ifndef HINTS_HPP
-#define HINTS_HPP
+#ifndef SRE_HINTS_HPP
+#define SRE_HINTS_HPP
 
 #include <GLFW/glfw3.h>
 #include <map>
@@ -7,11 +7,10 @@
 
 namespace sre
 {
-    /** Represents a set of GLFW Hints **/
-    class Hints
+    class Attributes
     {
     protected:
-        // special values
+         // special values
         enum API
         {
             OPENGL_API,
@@ -59,6 +58,13 @@ namespace sre
             OPENGL_DEBUG,
             OPENGL_PROFILE,
         };
+        //// static methods ////
+        static void getGLFWattrib ( const Attributes::KEY & attrib, const & val, int & attribGLFW, int & valGLFW );
+    };
+    /** A interface representing a set of GLFW Hints **/
+    class Hints : public Attributes
+    {
+    public:
         /** Applies GLFW/OpenGL settings for window, its context, and framebuffers **/
         virtual void apply() const =0;
     };
