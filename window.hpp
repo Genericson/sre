@@ -1,5 +1,5 @@
-#ifndef WINDOW_HPP
-#define WINDOW_HPP
+#ifndef SRE_WINDOW_HPP
+#define SRE_WINDOW_HPP
 
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
@@ -30,21 +30,19 @@ namespace sre
         // get
         GLFWwindow * getGLFWwindow();
         ivec2 getFramebufferSize() const;
-
-        //std::string getTitle () const;
         ivec2 getPos () const;
         ivec2 getSize () const;
-        ivec2 getFramebufferSize ();
+
 
         bool exists () const;
         int shouldClose () const;
 
         // set
-        void setTitle( std::string title);
-        void setPos ( int xPos, int yPos );
-        void setPos ( ivec2 pos);
-        void setSize ( int width, int height );
-        void setSize ( ivec2 size );
+        void setTitle( const std::string & title);
+        void setPos ( const int & xPos, int & yPos );
+        void setPos ( const ivec2 & pos);
+        void setSize ( const int & width, int & height );
+        void setSize ( const ivec2 & size );
 
         // set command
         void makeActive ();

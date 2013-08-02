@@ -2,127 +2,121 @@
 
 namespace sre
 {
-    //////////////
-    //  Window
-    //
-    //////////////
-
-    // constructors
-    Window::Window ( GLFWwindow * window )
-    {
+    //== Window ==//
+    /** \class Window
+     *  \brief A class representing a window with an OpenGL context
+     *  \sa GLFWwindow */
+        //// ctor ////
+    /** Constructs from pointer from a GLFWwindow \sa glfwCreateWindow */
+    Window::Window ( GLFWwindow * window ) {
         this->window = window;
     }
+    /** Constructs a window given 0 to 5 parameters
+     *  \param[in] width,height width and height of the window in screen coordinates
+     *  \param[in] title The initial title of the window
+     *  \param[in] monitor The monitor to use for full-screen mode. Pass `Monitor(nullptr)` for windowed mode
+     *  \param[in] share The window to context resuources with. Pass `Window(nullptr)` for windowed mode
+     *  \sa glfwCreateWindow(int, int, const char*, GLFWmonitor*, GLFWwindow*) */
     Window::Window ( const int width, const int height,
                     const std::string & title,
                     const Hints & hints,
                     const Monitor & monitor,
-                    const Window & share )
-    {
+                    const Window & share ) {
         hints.apply();
         this->window = glfwCreateWindow( width, height,
                                        title.c_str(),
                                        monitor.getGLFWMonitor(),
                                        share.window );
     }
-    // get methods
-    GLFWwindow * Window::getGLFWwindow()
-    {
+        //// get methods ////
+    /** \return A pointer to the GLFWwindow represented by this object. */
+    GLFWwindow * Window::getGLFWwindow() {
         return this->window;
     }
-    ivec2 Window::getFramebufferSize() const
-    {
+    /** \return A vector containing the size of the Window's framebuffer in pixel.
+     *  \sa glfwGetFamebufferSize */
+    ivec2 Window::getFramebufferSize() const {
             ivec2 size;
             glfwGetFramebufferSize( this->window, &size.x, &size.y );
             return size;
     }
-    /** Returns window's position in pixels
-        \param[out] a vector holding the x and y coordinates of the window in pixels
-        \sa setPos(), glfwGetWindowPos()
+    /** \return  A vector holding the x and y coordinates of the window in pixels
+     *  \sa setPos(), glfwGetWindowPos()
     */
-    ivec2 Window::getPos () const
-    {
+    ivec2 Window::getPos () const {
         ivec2 pos;
         glfwGetWindowPos( this->window, &pos.x, &pos.y );
         return pos;
     }
-    /** Returns window's size in pixels
-        \param[out] a vector holding the width and height of the window in pixels
-        \sa setSize(), glfwGetWindowPos()
+    /** \return A vector holding the width and height of the window in pixels
+     *  \sa setSize(), glfwGetWindowPos()
     */
-    ivec2 Window::getSize () const
-    {
+    ivec2 Window::getSize () const {
         ivec2 size;
         glfwGetWindowSize( this->window, &size.x, &size.y );
         return size;
     }
     /** Returns true if window was created successfully
-        \param[out] true if window exists, false otherwise
-        \sa Window(), glfwCreateWindow()
-    */
-    bool Window::exists () const
-    {
+     *   \return true if window exists, false otherwise
+     *   \sa Window(), glfwCreateWindow()
+     */
+    bool Window::exists () const {
         return (window != nullptr);
     }
     /** checks if window's "should close" flag is set
-        \param[out] -GL_TRUE if window should close
-                    -GL_FALSE if windw should remain open
+        \return If the window exists/was-created. True if window should close,
+                false if window should remain open
+        \sa glfwWindowShouldClose
     */
-    int Window::shouldClose () const
-    {
+    int Window::shouldClose () const {
         return glfwWindowShouldClose( this->window );
     }
 
     // set
     /** Sets window's title
-        \param[in] title new title
+        \param[in] title The window's new title
         \sa getTitle(), glfwGetWindowTitle()
     */
-    void Window::setTitle ( std::string title )
-    {
+    void Window::setTitle ( std::string title ) {
         glfwSetWindowTitle( this->window, title.c_str() );
     }
     /** Sets window's position
-        \param[in] width x screen coordinate
-        \param[in] height y screen coordinate
+        \param[in] width,height  The x & y screen coordinate
         \sa getPos(), glfwSetWindowPos()
     */
-    void Window::setPos ( int width, int height )
-    {
+    void Window::setPos ( int width, int height ) {
         glfwSetWindowPos( this->window, width, height );
     }
     /** Sets window's position
-        \param[in] pos vector of x and y screen coordinates
+        \param[in] pos Vector of x and y screen coordinates
         \sa getPos(), glfwSetWindowPos()
     */
-    void Window::setPos ( ivec2 pos )
-    {
+    void Window::setPos ( ivec2 pos ) {
         glfwSetWindowPos( this->window, pos.x, pos.y );
     }
     /** Sets window's size in pixels
-        \param[in] xSize width in pixels
-        \param[in] ySize height in pixels
+        \param[in] xSize Width in pixels
+        \param[in] ySize Height in pixels
         \sa getPos(), glfwSetWindowSize()
     */
-    void Window::setSize ( int xSize, int ySize )
-    {
+    void Window::setSize ( int xSize, int ySize ) {
         glfwSetWindowSize( this->window, xSize, ySize );
     }
     /** Sets window's size in pixels
-        \param[in] size size in pixels
+        \param[in] size Size in pixels
         \sa getPos(), glfwSetWindowSize()
     */
-    void Window::setSize ( ivec2 size )
-    {
+    void Window::setSize ( ivec2 size ) {
         glfwSetWindowSize( this->window, size.x, size.y );
     }
 
     // set command
-    void Window::makeActive()
-    {
+    /** Make this window the active OpenGl context */
+    void Window::makeActive() {
         glfwMakeContextCurrent( this->window );
     }
-    void Window::swapBuffers()
-    {
+    /** Swaps the front and back buffers of this window. \sa glfwSwapBuffers */
+    void Window::swapBuffers() {
         glfwSwapBuffers( this->window );
     }
     /** Iconifies/minimizes window
