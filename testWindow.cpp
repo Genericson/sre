@@ -3,6 +3,7 @@
 
 #include <GL/glew.h>
 #include "window.hpp"
+#include "compiler.hpp"
 #include <glm/glm.hpp>
 #include <string>
 #include <iostream>
@@ -171,39 +172,54 @@ int main()
 void input()
 {
     using namespace std;
-
-    string title;
-    glm::ivec2 pos;
-    glm::ivec2 size;
-
-    while (true)
+    using namespace sre::console;
+    istringstream inputbuf;
+    string str = "";
+    Token tok;
+    do
     {
-        //cout<<"set title: ";
-        cout<<"title: ";
-        cin>>title;
-
-        win.load()->setTitle(title);
-
-        cout<<"set pos: ";
-        cin>>pos.x>>pos.y;
-        win.load()->setPos(pos);
-
-        cout<<"set size: ";
-        cin>>size.x>>size.y;
-        win.load()->setSize(size);
-
+        getline(cin, str, '\n');
+        str.append("\n");
+        //cout<<str;
+        Lexer lex = Lexer(str);
+        tok = lex.next();
+        cout<<"type: "<<tok.name()<<"  value: "<<tok.value<<std::endl;
         cout<<endl;
+    } while (true);
 
-        //spit out what the window is now
-        cout<<"Window Values..."<<endl;
+//    string title;
+//    glm::ivec2 pos;
+//    glm::ivec2 size;
+//
+//    while (true)
+//    {
 
-        pos = win.load()->getPos();
-        cout<<"pos: "<<pos.x<<" "<<pos.y<<endl;
-        size = win.load()->getSize();
-        cout<<"size: "<<size.x<<" "<<size.y<<endl;
-
-        cout<<endl;
-    }
+//        cout<<"set title: ";
+//        cout<<"title: ";
+//        cin>>title;
+//
+//        win.load()->setTitle(title);
+//
+//        cout<<"set pos: ";
+//        cin>>pos.x>>pos.y;
+//        win.load()->setPos(pos);
+//
+//        cout<<"set size: ";
+//        cin>>size.x>>size.y;
+//        win.load()->setSize(size);
+//
+//        cout<<endl;
+//
+//        //spit out what the window is now
+//        cout<<"Window Values..."<<endl;
+//
+//        pos = win.load()->getPos();
+//        cout<<"pos: "<<pos.x<<" "<<pos.y<<endl;
+//        size = win.load()->getSize();
+//        cout<<"size: "<<size.x<<" "<<size.y<<endl;
+//
+//        cout<<endl;
+//    }
 }
 
 void render()

@@ -77,21 +77,21 @@ namespace sre
         \param[in] title The window's new title
         \sa getTitle(), glfwGetWindowTitle()
     */
-    void Window::setTitle ( std::string title ) {
+    void Window::setTitle ( const std::string & title ) {
         glfwSetWindowTitle( this->window, title.c_str() );
     }
     /** Sets window's position
         \param[in] width,height  The x & y screen coordinate
         \sa getPos(), glfwSetWindowPos()
     */
-    void Window::setPos ( int width, int height ) {
+    void Window::setPos ( int  width, int height ) {
         glfwSetWindowPos( this->window, width, height );
     }
     /** Sets window's position
         \param[in] pos Vector of x and y screen coordinates
         \sa getPos(), glfwSetWindowPos()
     */
-    void Window::setPos ( ivec2 pos ) {
+    void Window::setPos ( const ivec2 & pos ) {
         glfwSetWindowPos( this->window, pos.x, pos.y );
     }
     /** Sets window's size in pixels
@@ -99,14 +99,14 @@ namespace sre
         \param[in] ySize Height in pixels
         \sa getPos(), glfwSetWindowSize()
     */
-    void Window::setSize ( int xSize, int ySize ) {
+    void Window::setSize (  int xSize, int ySize ) {
         glfwSetWindowSize( this->window, xSize, ySize );
     }
     /** Sets window's size in pixels
         \param[in] size Size in pixels
         \sa getPos(), glfwSetWindowSize()
     */
-    void Window::setSize ( ivec2 size ) {
+    void Window::setSize ( const ivec2 & size ) {
         glfwSetWindowSize( this->window, size.x, size.y );
     }
 

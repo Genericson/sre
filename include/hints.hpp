@@ -7,7 +7,7 @@
 
 namespace sre
 {
-    class Attributes
+    class WindowAttribs
     {
     protected:
          // special values
@@ -59,17 +59,18 @@ namespace sre
             OPENGL_PROFILE,
         };
         //// static methods ////
-        static void getGLFWattrib ( const Attributes::KEY & attrib, const & val, int & attribGLFW, int & valGLFW );
+        static void getGLFWattrib ( const WindowAttribs::KEY & attrib,
+                                    const int& val,
+                                    int & attribGLFW,
+                                    int & valGLFW );
     };
-    /** A interface representing a set of GLFW Hints **/
-    class Hints : public Attributes
+    class Hints : public WindowAttribs
     {
     public:
-        /** Applies GLFW/OpenGL settings for window, its context, and framebuffers **/
         virtual void apply() const =0;
     };
 
-    class MapHints : public Hints, public std::map<Hints::KEY, int>
+    class HintsMap : public Hints, public std::map<Hints::KEY, int>
     {
         static void applyHint (const Hints::KEY & key, const int & val );
 
@@ -83,7 +84,7 @@ namespace sre
         void apply() const;
     };
 
-    class WindowHints : public MapHints
+    class WindowHints : public HintsMap
     {
 
     public:
@@ -93,7 +94,7 @@ namespace sre
         void decorated  ( bool tf )  { (*this)[DECORATED] = tf; }
     };
 
-    class FramebufferHints: public MapHints
+    class FramebufferHints: public HintsMap
     {
     public:
         FramebufferHints();
@@ -114,7 +115,7 @@ namespace sre
         void sRGBCapable    ( bool tf )     { (*this)[SRGB_CAPABLE] = tf; }
     };
 
-    class ContextHints : public MapHints
+    class ContextHints : public HintsMap
     {
     public:
         ContextHints();

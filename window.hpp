@@ -39,9 +39,9 @@ namespace sre
 
         // set
         void setTitle( const std::string & title);
-        void setPos ( const int & xPos, int & yPos );
+        void setPos ( int xPos, int yPos );
         void setPos ( const ivec2 & pos);
-        void setSize ( const int & width, int & height );
+        void setSize (  int width, int height );
         void setSize ( const ivec2 & size );
 
         // set command
