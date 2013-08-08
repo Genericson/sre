@@ -1,5 +1,5 @@
-#ifndef COMPILER_HPP_INCLUDED
-#define COMPILER_HPP_INCLUDED
+#ifndef LEXER_HPP_INCLUDED
+#define LEXER_HPP_INCLUDED
 
 namespace sre {
 namespace console {
@@ -15,6 +15,7 @@ public:
         FLOAT_LIT,
         CHAR_LIT,
         STRING_LIT,
+        END_OF_INPUT, // end of input (or end of file)
         ERROR // special token that represents an error occured
     };
     TOKEN type;
@@ -26,6 +27,8 @@ public:
     std::string toString ();
     bool operator== ( Token rarg );
     bool operator== ( Token::TOKEN id );
+    bool operator!= ( Token rarg );
+    bool operator!= ( Token::TOKEN id );
         //// static methos ////
     std::string name();
 };
