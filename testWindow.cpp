@@ -179,13 +179,16 @@ void input()
     do
     {
         getline(cin, str, '\n');
-        str.append("\n");
+        //str.append("\n");
         //cout<<str;
         Lexer lex = Lexer(str);
-        tok = lex.next();
-        cout<<"type: "<<tok.name()<<"  value: "<<tok.value<<std::endl;
-        cout<<endl;
-    } while (true);
+        Token tok;
+        do {
+            tok = lex.next();
+            cout<<"type: "<<tok.name()<<"  value: "<<tok.value<<std::endl;
+        } while  (tok != Token::END_OF_INPUT && tok != Token::ERROR);
+    } while (str != "exit\n");
+
 
 //    string title;
 //    glm::ivec2 pos;
