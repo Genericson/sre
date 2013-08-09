@@ -120,7 +120,7 @@ Token Lexer::charLit () {
         return stringLit(str);
     } else {
         return Token(Token::ERROR,
-                     "character literal missing end \[\'\]");
+                     "character literal missing end [\']");
     }
 }
 Token Lexer::stringLit (std::string lh) {
@@ -134,7 +134,7 @@ Token Lexer::stringLit (std::string lh) {
         return Token(Token::STRING_LIT, str);
     } else {
         return Token(Token::ERROR,
-                     "string literal missing end \[\'\]");
+                     "string literal missing end [\']");
     }
 }
 Token Lexer::separator () {
@@ -176,9 +176,9 @@ Token Lexer::next () {
             return separator();
         }
         else {
-            std:: string str = "invalid character \[";
+            std:: string str = "invalid character [";
             str.push_back(ch);
-            str.append("\] for token");
+            str.append("] for token");
             return Token(Token::ERROR, str);
         }
 }

@@ -1,9 +1,8 @@
 #ifndef TESTWINDOW_CPP
 #define TESTWINDOW_CPP
 
+
 #include <GL/glew.h>
-#include "window.hpp"
-#include "compiler.hpp"
 #include <glm/glm.hpp>
 #include <string>
 #include <iostream>
@@ -11,6 +10,9 @@
 #include <thread>
 #include <atomic>
 #include <sstream>
+#include "lexer.hpp"
+#include "command.hpp"
+#include "window.hpp"
 
 //#define GLEW_STATIC
 
@@ -176,8 +178,21 @@ void input()
     istringstream inputbuf;
     string str = "";
     Token tok;
+
+    // now test Command
+    Type arg0 = Type("arg0"), arg1 = Type("arg1");
+    CommandDef cmdDef = CommandDef("command");
+    cmdDef.push(arg0);
+    cmdDef.push(arg1);
+
+    Command cmd = Command("command");
+    cmd.push(arg0);
+
+    cout<< "Is a command: " << (cmd == cmdDef) << endl;
+
     do
     {
+        bool stop = false;
         getline(cin, str, '\n');
         //str.append("\n");
         //cout<<str;
@@ -187,8 +202,7 @@ void input()
             tok = lex.next();
             cout<<"type: "<<tok.name()<<"  value: "<<tok.value<<std::endl;
         } while  (tok != Token::END_OF_INPUT && tok != Token::ERROR);
-    } while (str != "exit\n");
-
+    } while (true);
 
 //    string title;
 //    glm::ivec2 pos;
