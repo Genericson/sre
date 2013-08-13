@@ -4,11 +4,29 @@
 #include <iostream>
 
 #include <string>
-#include <forward_list>
+#include <list>
 #include <memory>
+#include <functional>
+#include "variable.hpp"
 #include "command.hpp"
 
 namespace sre { namespace console {
+
+//== CommandFunc ==//
+/** \class CommandFunc
+ * This is a functor class designed to be used with CommandDef.
+ * Any inherited class can be used with CommandDef that defines `operator()(const Command&)`.
+ * \warning The parameters of the CommandFunc must correlate with those of the CommandDef. **/
+//== other CommandFunc children ==//
+/** \class EmptyCommand
+ *  A functor that does nothing **/
+/** \class EchoCommand
+ *  A functor that echoes it's argument **/
+////
+//void EchoCommand::operator() (Command cmd) {
+//}
+
+
 
 //== CommandDef ==//
 /** \class CommandDef
@@ -22,7 +40,11 @@ CommandDef::CommandDef( std::string id)
 /** Push a new parameter to the list of parameters
  *  \param[in] type Type of parameter **/
 void CommandDef::push(Type type) {
-    parameters->push_front(type);
+    parameters->push_back(type);
+}
+/** Calls this Command's associated functor by passing it a Command (along with it's associated arguments).
+ *  **/
+void CommandDef::operator() (Command cmd) {
 }
 //== Command ==//
     //// ctor ////
@@ -31,8 +53,9 @@ Command::Command(std::string id) {
     args = std::unique_ptr<TypeList>(new TypeList());
 }
 void Command::push(Type type) {
-    args->push_front(type);
+    args->push_back(type);
 }
+
 //== Type ==//
     //// ctor ////
 Type::Type(std::string id) {
@@ -63,14 +86,15 @@ bool operator==(const Command& cmd, const CommandDef& def) {
         {
             return true;
         }
+        auto itArg = argList.begin();
         auto itDef = paramList.begin();
         // for each parameter
-        for(Type& arg : argList) {
+        for(; itArg != argList.end(); ++itArg, ++itDef ) {
             if ( itDef == paramList.end() ) { // too many arguments
-                return false;
                 std::cerr<<"too many arguments"<<std::endl;
+                return false;
             }
-            else if ( arg.id != itDef->id ) { // wrong type
+            else if ( itArg->id != itDef->id ) { // wrong type
                 std::cerr<<"wrong type"<<std::endl;
                 return false;
             }
@@ -85,7 +109,7 @@ bool operator==(const Command& cmd, const CommandDef& def) {
         return false;
     }
 }
-inline bool operator==(const CommandDef& def, const Command& cmd) {
+bool operator==(const CommandDef& def, const Command& cmd) {
     return (cmd == def);
 }
 

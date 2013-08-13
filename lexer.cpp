@@ -48,6 +48,10 @@ std::string Token::name () {
 
 //== Lexer ==//
     //// ctor ////
+Lexer::Lexer ( const Lexer& lex) {
+    this->input = new std::istringstream(lex.input->str());
+    this->ch = ' ';
+}
 Lexer::Lexer ( std::string input ) {
     this->input = new std::istringstream(input);
     this->ch = ' ';

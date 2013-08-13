@@ -184,11 +184,14 @@ void input()
     CommandDef cmdDef = CommandDef("command");
     cmdDef.push(arg0);
     cmdDef.push(arg1);
+    cmdDef.push(arg1);
 
     Command cmd = Command("command");
     cmd.push(arg0);
+    cmd.push(arg1);
+    cmd.push(arg1);
 
-    cout<< "Is a command: " << (cmd == cmdDef) << endl;
+    cout<< "Is a command: " << (cmdDef == cmd) << endl;
 
     do
     {

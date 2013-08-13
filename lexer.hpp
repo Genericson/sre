@@ -43,7 +43,7 @@ class Lexer
 {
 private:
     std::istringstream * input;
-    char ch = ' ';
+    char ch;
 
     //// methods representing states in DFSA ////
     void space ();
@@ -56,6 +56,7 @@ private:
 
 
 public:
+    Lexer (const Lexer& lex);
     Lexer ( std::string input );
     Token next ();
     ~Lexer();

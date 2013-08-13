@@ -52,7 +52,7 @@ namespace sre
             _key = GLFW_ACCUM_ALPHA_BITS; break;
         case AUX_BUFFERS:
             _key = GLFW_AUX_BUFFERS; break;
-        case SAMPLES:http:
+        case SAMPLES:
             _key = GLFW_SAMPLES; break;
         case REFRESH_RATE:
             _key = GLFW_REFRESH_RATE; break;
