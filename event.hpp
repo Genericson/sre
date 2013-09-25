@@ -1,0 +1,6 @@
+#ifndef EVENT_HPP_INCLUDED
+#define EVENT_HPP_INCLUDED
+
+
+
+#endif // EVENT_HPP_INCLUDED

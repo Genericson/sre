@@ -1,0 +1,376 @@
+# depslib dependency file v1.0
+1374706733 source:/home/genericson/dev/sbre/test.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<SOIL/SOIL.h>
+	<glm/glm.hpp>
+	<iostream>
+	"window.hpp"
+
+1374106656 /home/genericson/dev/include/GL/glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1374024117 /home/genericson/dev/include/GLFW/glfw3.h
+	<stddef.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<GLES3/gl3.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1215447208 /home/genericson/dev/include/SOIL/SOIL.h
+
+1374023729 /home/genericson/dev/include/glm/glm.hpp
+	"core/_fixes.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	<cassert>
+	"fwd.hpp"
+	"core/setup.hpp"
+	"./core/_vectorize.hpp"
+	"./core/type_half.hpp"
+	"./core/type_float.hpp"
+	"./core/type_int.hpp"
+	"./core/_literals.hpp"
+	"./core/type_vec1.hpp"
+	"./core/type_vec2.hpp"
+	"./core/type_vec3.hpp"
+	"./core/type_vec4.hpp"
+	"./core/type_mat2x2.hpp"
+	"./core/type_mat2x3.hpp"
+	"./core/type_mat2x4.hpp"
+	"./core/type_mat3x2.hpp"
+	"./core/type_mat3x3.hpp"
+	"./core/type_mat3x4.hpp"
+	"./core/type_mat4x2.hpp"
+	"./core/type_mat4x3.hpp"
+	"./core/type_mat4x4.hpp"
+	"./core/func_trigonometric.hpp"
+	"./core/func_exponential.hpp"
+	"./core/func_common.hpp"
+	"./core/func_packing.hpp"
+	"./core/func_geometric.hpp"
+	"./core/func_matrix.hpp"
+	"./core/func_vector_relational.hpp"
+	"./core/func_integer.hpp"
+	"./core/func_noise.hpp"
+	"./core/_swizzle.hpp"
+
+1374023729 /home/genericson/dev/include/glm/core/_fixes.hpp
+	<cmath>
+
+1374023729 /home/genericson/dev/include/glm/fwd.hpp
+	"core/type_int.hpp"
+	"core/type_float.hpp"
+	"core/type_vec.hpp"
+	"core/type_mat.hpp"
+
+1374023729 /home/genericson/dev/include/glm/core/type_int.hpp
+	"setup.hpp"
+	<cstdint>
+
+1374023729 /home/genericson/dev/include/glm/core/setup.hpp
+	<cassert>
+	<intrin.h>
+	<immintrin.h>
+	<immintrin.h>
+	<smmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1374023729 /home/genericson/dev/include/glm/core/type_float.hpp
+	"setup.hpp"
+
+1374023729 /home/genericson/dev/include/glm/core/type_vec.hpp
+	"precision.hpp"
+
+1374023729 /home/genericson/dev/include/glm/core/precision.hpp
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat.hpp
+	"precision.hpp"
+
+1374023729 /home/genericson/dev/include/glm/core/_vectorize.hpp
+
+1374023729 /home/genericson/dev/include/glm/core/type_half.hpp
+	"setup.hpp"
+	"type_half.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_half.inl
+
+1374023729 /home/genericson/dev/include/glm/core/_literals.hpp
+
+1374023729 /home/genericson/dev/include/glm/core/type_vec1.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"type_vec1.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/_swizzle.hpp
+	"_swizzle_func.hpp"
+
+1374023729 /home/genericson/dev/include/glm/core/_swizzle_func.hpp
+
+1374023729 /home/genericson/dev/include/glm/core/type_vec1.inl
+
+1374023729 /home/genericson/dev/include/glm/core/type_vec2.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"type_vec2.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_vec2.inl
+
+1374023729 /home/genericson/dev/include/glm/core/type_vec3.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"type_vec3.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_vec3.inl
+
+1374023729 /home/genericson/dev/include/glm/core/type_vec4.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"type_vec4.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_vec4.inl
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat2x2.hpp
+	"../fwd.hpp"
+	"type_mat.hpp"
+	"type_mat2x2.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat2x2.inl
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat2x3.hpp
+	"../fwd.hpp"
+	"type_mat.hpp"
+	"type_mat2x3.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat2x3.inl
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat2x4.hpp
+	"../fwd.hpp"
+	"type_mat.hpp"
+	"type_mat2x4.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat2x4.inl
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat3x2.hpp
+	"../fwd.hpp"
+	"type_mat.hpp"
+	"type_mat3x2.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat3x2.inl
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat3x3.hpp
+	"../fwd.hpp"
+	"type_mat.hpp"
+	"type_mat3x3.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat3x3.inl
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat3x4.hpp
+	"../fwd.hpp"
+	"type_mat.hpp"
+	"type_mat3x4.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat3x4.inl
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat4x2.hpp
+	"../fwd.hpp"
+	"type_mat.hpp"
+	"type_mat4x2.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat4x2.inl
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat4x3.hpp
+	"../fwd.hpp"
+	"type_mat.hpp"
+	"type_mat4x3.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat4x3.inl
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat4x4.hpp
+	"../fwd.hpp"
+	"type_mat.hpp"
+	"type_mat4x4.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/type_mat4x4.inl
+
+1374023729 /home/genericson/dev/include/glm/core/func_trigonometric.hpp
+	"func_trigonometric.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/func_trigonometric.inl
+
+1374023729 /home/genericson/dev/include/glm/core/func_exponential.hpp
+	"func_exponential.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/func_exponential.inl
+
+1374023729 /home/genericson/dev/include/glm/core/func_common.hpp
+	"setup.hpp"
+	"_fixes.hpp"
+	"func_common.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/func_common.inl
+
+1374023729 /home/genericson/dev/include/glm/core/func_packing.hpp
+	"func_packing.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/func_packing.inl
+
+1374023729 /home/genericson/dev/include/glm/core/func_geometric.hpp
+	"func_geometric.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/func_geometric.inl
+
+1374023729 /home/genericson/dev/include/glm/core/func_matrix.hpp
+	"func_matrix.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/func_matrix.inl
+
+1374023729 /home/genericson/dev/include/glm/core/func_vector_relational.hpp
+	"func_vector_relational.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/func_vector_relational.inl
+
+1374023729 /home/genericson/dev/include/glm/core/func_integer.hpp
+	"func_integer.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/func_integer.inl
+	<intrin.h>
+
+1374023729 /home/genericson/dev/include/glm/core/func_noise.hpp
+	"func_noise.inl"
+
+1374023729 /home/genericson/dev/include/glm/core/func_noise.inl
+
+1375485767 /home/genericson/dev/sbre/window.hpp
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<string>
+	<map>
+	"include/hints.hpp"
+	"monitor.hpp"
+
+1375485721 source:/home/genericson/dev/sbre/window.cpp
+	"window.hpp"
+
+1374709452 source:/home/genericson/dev/sbre/inputTest.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<SOIL/SOIL.h>
+	<glm/glm.hpp>
+	<iostream>
+	"input.hpp"
+
+1374699914 /home/genericson/dev/sbre/input.hpp
+	<GLFW/glfw3.h>
+
+1376692699 source:/home/genericson/dev/sbre/testWindow.cpp
+	<GL/glew.h>
+	<glm/glm.hpp>
+	<string>
+	<iostream>
+	<stdexcept>
+	<thread>
+	<atomic>
+	<sstream>
+	<memory>
+	"lexer.hpp"
+	"command.hpp"
+	"window.hpp"
+	"parser.hpp"
+
+1376360183 source:/home/genericson/dev/sbre/src/hints.cpp
+	"hints.hpp"
+
+1375828858 /home/genericson/dev/sbre/include/hints.hpp
+	<GLFW/glfw3.h>
+	<map>
+	<iostream>
+
+1375400485 /home/genericson/dev/sbre/monitor.hpp
+	<list>
+
+1375471111 source:/home/genericson/dev/sbre/monitor.cpp
+	<GLFW/glfw3.h>
+	"monitor.hpp"
+
+1375303314 source:/home/genericson/dev/sbre/settings.cpp
+	"settings.hpp"
+
+1375303347 /home/genericson/dev/sbre/settings.hpp
+	<map>
+
+1375815232 source:/home/genericson/dev/sbre/console.cpp
+	"console.h"
+
+1375815836 /home/genericson/dev/sbre/console.h
+
+1375927482 source:/home/genericson/dev/sbre/compiler.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<cctype>
+	"compiler.hpp"
+
+1375981738 /home/genericson/dev/sbre/compiler.hpp
+
+1376522273 source:/home/genericson/dev/sbre/command.cpp
+	<iostream>
+	<string>
+	<list>
+	<memory>
+	<functional>
+	"variable.hpp"
+	"command.hpp"
+
+1376522752 /home/genericson/dev/sbre/command.hpp
+	<list>
+
+1376517011 /home/genericson/dev/sbre/lexer.hpp
+
+1376517013 source:/home/genericson/dev/sbre/lexer.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<cctype>
+	"lexer.hpp"
+
+1376518863 source:/home/genericson/dev/sbre/parser.cpp
+	<string>
+	<memory>
+	"variable.hpp"
+	"lexer.hpp"
+	"command.hpp"
+	"variable.hpp"
+	"parser.hpp"
+
+1376518656 /home/genericson/dev/sbre/parser.hpp
+	<map>
+	"command.hpp"
+	"variable.hpp"
+
+1376518824 /home/genericson/dev/sbre/variable.hpp
+	<memory>
+
+1376359940 source:/home/genericson/dev/sbre/variable.cpp
+	<iostream>
+	<string>
+	<memory>
+	"variable.hpp"
+
