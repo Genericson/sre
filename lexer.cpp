@@ -150,7 +150,7 @@ Token Lexer::separator () {
 
 
 /** Get next token
- *  \return The next token from the Lexer's inputstream**/
+ *  \return The next token from the Lexer's inputstream. Token::ERROR is returned if**/
 Token Lexer::next () {
         // skip white space
          if (std::isspace(ch)) {     // [ \f\n\r\t\v]

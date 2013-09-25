@@ -29,6 +29,7 @@ public:
     bool operator== ( Token::TOKEN id );
     bool operator!= ( Token rarg );
     bool operator!= ( Token::TOKEN id );
+    bool isError() { if(type == Token::ERROR) return true; };
         //// static methos ////
     std::string name();
 };

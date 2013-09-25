@@ -10,10 +10,11 @@
 #include <thread>
 #include <atomic>
 #include <sstream>
+#include <memory>
 #include "lexer.hpp"
 #include "command.hpp"
 #include "window.hpp"
-
+#include "parser.hpp"
 //#define GLEW_STATIC
 
 
@@ -181,31 +182,47 @@ void input()
 
     // now test Command
     Type arg0 = Type("arg0"), arg1 = Type("arg1");
-    CommandDef cmdDef = CommandDef("command");
+    CommandDef cmdDef = CommandDef("nothing");
     cmdDef.push(arg0);
     cmdDef.push(arg1);
     cmdDef.push(arg1);
+    shared_ptr<CommandFunc> cmdFuncPtr = shared_ptr<CommandFunc>(new EmptyCommand() );
+    cmdDef.setFunc(cmdFuncPtr);
 
-    Command cmd = Command("command");
+    Command cmd = Command("nothing");
     cmd.push(arg0);
     cmd.push(arg1);
     cmd.push(arg1);
 
+
+    cout<<(*cmdFuncPtr)(cmd)<<endl;
+
     cout<< "Is a command: " << (cmdDef == cmd) << endl;
+
+    // create CommandMap and VariableMap for Lexer to use
+    CommandMap cmdMap;
+
+    VariableMap  varMap;
+    // create lexer
+    Lexer * lex = new Lexer("");
+    // create and link parser to lexer
+    Parser parser = Parser(*lex);
 
     do
     {
-        bool stop = false;
         getline(cin, str, '\n');
         //str.append("\n");
         //cout<<str;
-        Lexer lex = Lexer(str);
+        delete lex;
+        lex = new Lexer(str);
         Token tok;
         do {
-            tok = lex.next();
+            tok = lex->next();
             cout<<"type: "<<tok.name()<<"  value: "<<tok.value<<std::endl;
         } while  (tok != Token::END_OF_INPUT && tok != Token::ERROR);
     } while (true);
+
+    delete lex;
 
 //    string title;
 //    glm::ivec2 pos;

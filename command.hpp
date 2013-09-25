@@ -18,14 +18,17 @@ class CommandDef
 private:
     std::string id;
     std::unique_ptr<TypeList> parameters;
-    std::unique_ptr<CommandFunc> func;
+    std::shared_ptr<CommandFunc> func;
 public:
-    CommandDef(std::string id);
-    void push(Type type);
-    void operator() (Command cmd);
+    CommandDef (const CommandDef& cmdDef);
+    CommandDef (std::string id);
+    void push (Type type);
+    void setFunc (std::shared_ptr<CommandFunc> cmdFunc);
+    std::string operator() (Command cmd);
+    std::string getId() {return id;}
 
-    friend bool operator==(const Command& cmd, const CommandDef& def);
-    friend bool operator==(const CommandDef& def, const Command& cmd);
+    friend bool operator== (const Command& cmd, const CommandDef& def);
+    friend bool operator== (const CommandDef& def, const Command& cmd);
 };
 
 class Command
@@ -43,11 +46,13 @@ public:
 
 class CommandFunc {
 public:
-    virtual void operator() (Command cmd);
+    CommandFunc () {}
+    virtual std::string operator() (const Command& cmd) =0;
 };
 
 class EmptyCommand : public CommandFunc {
-    void operator() (Command cmd) {}
+public:
+    std::string operator() (const Command& cmd) { return "Did nothing."; }
 };
 
 //class EchoCommand : public CommandFunc {

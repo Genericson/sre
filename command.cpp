@@ -17,9 +17,10 @@ namespace sre { namespace console {
  * This is a functor class designed to be used with CommandDef.
  * Any inherited class can be used with CommandDef that defines `operator()(const Command&)`.
  * \warning The parameters of the CommandFunc must correlate with those of the CommandDef. **/
+
 //== other CommandFunc children ==//
 /** \class EmptyCommand
- *  A functor that does nothing **/
+ *  A functor that does nothing but tell you that it did.**/
 /** \class EchoCommand
  *  A functor that echoes it's argument **/
 ////
@@ -31,20 +32,31 @@ namespace sre { namespace console {
 //== CommandDef ==//
 /** \class CommandDef
  *  A definition for a command **/
+
+CommandDef::CommandDef( const CommandDef& cmdDef) {
+    id = cmdDef.id;
+    parameters = std::unique_ptr<TypeList>(new TypeList(*cmdDef.parameters));
+    func = cmdDef.func;
+}
 CommandDef::CommandDef( std::string id)
 {
     // no parameters by default
     this->id = id;
     parameters = std::unique_ptr<TypeList>(new TypeList());
+    func = std::unique_ptr<CommandFunc>(new EmptyCommand);
 }
 /** Push a new parameter to the list of parameters
  *  \param[in] type Type of parameter **/
 void CommandDef::push(Type type) {
     parameters->push_back(type);
 }
+/** change or add the the CommandFunc **/
+void CommandDef::setFunc (std::shared_ptr<CommandFunc> cmdFunc) {
+    this->func = cmdFunc;
+}
 /** Calls this Command's associated functor by passing it a Command (along with it's associated arguments).
  *  **/
-void CommandDef::operator() (Command cmd) {
+std::string CommandDef::operator() (Command cmd) {
 }
 //== Command ==//
     //// ctor ////
