@@ -5,7 +5,7 @@ title: SRE
 
 SRE is an experimental rendering/graphics engine built on OpenGL.
 
-The Git repository can be accessed using `git clone ssh://git@sumbeard.net/sre`
+The repository is hosted on GitHub at <https://github.com/Sumbeard/sre>
 
 <ul>
   {% for post in site.posts %}
