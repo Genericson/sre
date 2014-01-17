@@ -1,6 +1,6 @@
 safe: true
 lsi: false
 pygments: true
-baseurl: 
+baseurl: sre.sumbeard.net
 
 timezone: America/Denver
