@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "first post"
+title:  "First Post"
 date:   2014-1-16 12:00:00
 categories: sre update
 ---
