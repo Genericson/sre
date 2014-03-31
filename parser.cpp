@@ -24,8 +24,8 @@ Parser::Parser (const Lexer& lex,
 }
 
 /** Checks and executes the code contained in the internal lexer and returns console output. **/
-std::string Parser::operator() (){
-}
+/*std::string Parser::operator() (){
+}*/
 
 Parser::~Parser()
 {

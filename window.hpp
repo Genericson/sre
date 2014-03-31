@@ -5,7 +5,7 @@
 #include <glm/glm.hpp>
 #include <string>
 #include <map>
-#include "include/hints.hpp"
+#include "hints.hpp"
 #include "monitor.hpp"
 
 namespace sre

@@ -374,3 +374,123 @@
 	<memory>
 	"variable.hpp"
 
+1395104193 source:/home/genericson/workspace/sre/command.cpp
+	<iostream>
+	<string>
+	<list>
+	<memory>
+	<functional>
+	"variable.hpp"
+	"command.hpp"
+
+1395100616 /home/genericson/workspace/sre/variable.hpp
+	<memory>
+
+1395100616 /home/genericson/workspace/sre/command.hpp
+	<list>
+
+1395100616 source:/home/genericson/workspace/sre/console.cpp
+	"console.h"
+
+1395100616 /home/genericson/workspace/sre/console.h
+
+1395100616 source:/home/genericson/workspace/sre/lexer.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<cctype>
+	"lexer.hpp"
+
+1395100616 /home/genericson/workspace/sre/lexer.hpp
+
+1395100616 source:/home/genericson/workspace/sre/monitor.cpp
+	<GLFW/glfw3.h>
+	"monitor.hpp"
+
+1395100616 /home/genericson/workspace/sre/monitor.hpp
+	<list>
+
+1395100616 source:/home/genericson/workspace/sre/settings.cpp
+	"settings.hpp"
+
+1395100616 /home/genericson/workspace/sre/settings.hpp
+	<map>
+
+1395100616 source:/home/genericson/workspace/sre/src/hints.cpp
+	"hints.hpp"
+
+1395100616 /home/genericson/workspace/sre/include/hints.hpp
+	<GLFW/glfw3.h>
+	<map>
+	<iostream>
+
+1395965713 source:/home/genericson/workspace/sre/testWindow.cpp
+	<GL/glew.h>
+	<glm/glm.hpp>
+	<string>
+	<iostream>
+	<stdexcept>
+	<thread>
+	<atomic>
+	<sstream>
+	<memory>
+	"window.hpp"
+	"renderer.hpp"
+
+1395104740 /home/genericson/workspace/sre/window.hpp
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<string>
+	<map>
+	"hints.hpp"
+	"monitor.hpp"
+
+1395100616 /home/genericson/workspace/sre/parser.hpp
+	<map>
+	"command.hpp"
+	"variable.hpp"
+
+1395100616 source:/home/genericson/workspace/sre/variable.cpp
+	<iostream>
+	<string>
+	<memory>
+	"variable.hpp"
+
+1395100616 source:/home/genericson/workspace/sre/window.cpp
+	"window.hpp"
+
+1395100616 source:/home/genericson/workspace/sre/parser.cpp
+	<string>
+	<memory>
+	"variable.hpp"
+	"lexer.hpp"
+	"command.hpp"
+	"variable.hpp"
+	"parser.hpp"
+
+1395100616 source:/home/genericson/workspace/sre/hints.cpp
+	"hints.hpp"
+
+1395100616 /home/genericson/workspace/sre/hints.hpp
+	<GLFW/glfw3.h>
+	<map>
+	<iostream>
+
+1395964031 /home/genericson/workspace/sre/renderer.hpp
+	<GL/glew.h>
+	<stdexcept>
+	<atomic>
+	"window.hpp"
+
+1395976377 source:/home/genericson/workspace/sre/renderer.cpp
+	"renderer.hpp"
+	"window.hpp"
+	"shader.hpp"
+
+1395977254 /home/genericson/workspace/sre/shader.hpp
+
+1395976930 source:/home/genericson/workspace/sre/shader.cpp
+	<GL/glew.h>
+	<iostream>
+	"shader.hpp"
+

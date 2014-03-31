@@ -56,8 +56,8 @@ void CommandDef::setFunc (std::shared_ptr<CommandFunc> cmdFunc) {
 }
 /** Calls this Command's associated functor by passing it a Command (along with it's associated arguments).
  *  **/
-std::string CommandDef::operator() (Command cmd) {
-}
+/*std::string CommandDef::operator() (Command cmd) {
+}*/
 //== Command ==//
     //// ctor ////
 Command::Command(std::string id) {
