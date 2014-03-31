@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>My Project: Class Members</title>
+<title>SRE: Class Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -22,8 +29,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">SRE
    </div>
+   <div id="projectbrief">Experimental OpenGL Rendering Engine</div>
   </td>
  </tr>
  </tbody>
@@ -37,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -61,6 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li class="current"><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -68,15 +78,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li class="current"><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
+      <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
+      <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
+      <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
+      <li><a href="#index_f"><span>f</span></a></li>
+      <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_h"><span>h</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_k"><span>k</span></a></li>
+      <li><a href="#index_l"><span>l</span></a></li>
+      <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
+      <li><a href="#index_o"><span>o</span></a></li>
+      <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_r"><span>r</span></a></li>
+      <li><a href="#index_s"><span>s</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_v"><span>v</span></a></li>
+      <li><a href="#index_w"><span>w</span></a></li>
+      <li><a href="#index_0x7e"><span>~</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('functions.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,50 +139,565 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div><ul>
+<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
+
+<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>ACCUM_ALPHA_BITS
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a229c60e16a034af2a4eeef83497014a4">sre::WindowAttribs</a>
+</li>
+<li>ACCUM_BLUE_BITS
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1ace9cafd09f79b07b9d2d8cc202c6eaac">sre::WindowAttribs</a>
+</li>
+<li>ACCUM_GREEN_BITS
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a5a675c487ae683a0d29ceedf59e55f4d">sre::WindowAttribs</a>
+</li>
+<li>ACCUM_RED_BITS
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1af14197098c120a4f3d4c84e5c177879b">sre::WindowAttribs</a>
+</li>
+<li>accumAlphaBits()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#a723b0e9611830d3a287a29e424057159">sre::FramebufferHints</a>
+</li>
+<li>accumBlueBits()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#adf718410796395f50d0599de2b3d6161">sre::FramebufferHints</a>
+</li>
+<li>accumGreenBits()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#a8bd9bb5430f6750243a3e35fced8fb58">sre::FramebufferHints</a>
+</li>
+<li>accumRedBits()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#abf5747463fdeb50581d4ad92757bb3df">sre::FramebufferHints</a>
+</li>
+<li>ALPHA_BITS
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a880f9c05c5bd2b2cc1afb79f31289e7a">sre::WindowAttribs</a>
+</li>
+<li>alphaBits()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#a13a8c27c54a00ca04a19ad3e2fc2ab88">sre::FramebufferHints</a>
+</li>
+<li>ANY
+: <a class="el" href="classsre_1_1_window_attribs.html#a4958929539c61345a16200fd4d511381a56f31902c2f5924e7b77ccb592c7ae1f">sre::WindowAttribs</a>
+</li>
+<li>API
+: <a class="el" href="classsre_1_1_window_attribs.html#adabf8184bbe48488b97eacd554382364">sre::WindowAttribs</a>
+</li>
+<li>apply()
+: <a class="el" href="classsre_1_1_hints_map.html#adb9153b66360097b339f426df16ab22b">sre::HintsMap</a>
+, <a class="el" href="classsre_1_1_default_hints.html#a4aa6165df9143ed70045233cf939831b">sre::DefaultHints</a>
+, <a class="el" href="classsre_1_1_hints.html#ad86843519d38eb066f509a05646c6d9b">sre::Hints</a>
+</li>
+<li>Arg()
+: <a class="el" href="classsre_1_1console_1_1_arg.html#a9148e6e427b45eda17828510245e85b2">sre::console::Arg</a>
+</li>
+<li>AUX_BUFFERS
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a093c4c2ee490e8609cf0741ff55cf1a8">sre::WindowAttribs</a>
+</li>
+<li>auxBuffers()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#ad4f1c8ade817f2cc7c9004e12732e452">sre::FramebufferHints</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>BLUE_BITS
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a160765db011df6cd42e779061d26c42a">sre::WindowAttribs</a>
+</li>
+<li>blueBits()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#ac51b680aa43c2398d50e8515e50379b8">sre::FramebufferHints</a>
+, <a class="el" href="classsre_1_1_video_mode.html#a8cf1e1d82ac91c4f21db905e7cdce205">sre::VideoMode</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>CHAR
+: <a class="el" href="classsre_1_1console_1_1_variable.html#ad824151969a1987bf3434adf690370ffaea771148a59c692fabd43a111428619b">sre::console::Variable</a>
+</li>
+<li>CHAR_LIT
+: <a class="el" href="classsre_1_1console_1_1_token.html#a6e95ac2e899711fb542486d1483e5612a2d4d1a8bddb82943d0d257df325fc2ed">sre::console::Token</a>
+</li>
+<li>CLIENT_API
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a90dc4215355738d66cac1b378f8c86f4">sre::WindowAttribs</a>
+</li>
+<li>Command()
+: <a class="el" href="classsre_1_1console_1_1_command.html#a6886783e90fc21f273e78e059415bc37">sre::console::Command</a>
+</li>
+<li>CommandDef()
+: <a class="el" href="classsre_1_1console_1_1_command_def.html#a4bbea143ae90987b127cadee8637ac72">sre::console::CommandDef</a>
+</li>
+<li>CommandFunc()
+: <a class="el" href="classsre_1_1console_1_1_command_func.html#ac90e5b34ec66148238d46dbbe53b0289">sre::console::CommandFunc</a>
+</li>
+<li>Console()
+: <a class="el" href="class_console.html#aba16cfd9f0894eb1312b1bc1155b6646">Console</a>
+</li>
+<li>CONTEXT_ROBUSTNESS
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1ab9d12f2a79c8017a2ba32060c445fcf3">sre::WindowAttribs</a>
+</li>
+<li>ContextHints()
+: <a class="el" href="classsre_1_1_context_hints.html#a9a37f995fc769a15a2a1bea633a7d47a">sre::ContextHints</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>debug()
+: <a class="el" href="classsre_1_1_context_hints.html#a598faec57b325b8d63c9ba533f6d937c">sre::ContextHints</a>
+</li>
+<li>decorated()
+: <a class="el" href="classsre_1_1_window_hints.html#a037b14336eca0e50510852936754172b">sre::WindowHints</a>
+</li>
+<li>DECORATED
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a6e43cc7037b5ddb3de04c87cdccf9447">sre::WindowAttribs</a>
+</li>
+<li>DEPTH_BITS
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a908515f43fe5ea08b41d3dfac05764a2">sre::WindowAttribs</a>
+</li>
+<li>depthBits()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#a35f8f2fa6416025a8eba8c73a96089c2">sre::FramebufferHints</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>END_OF_INPUT
+: <a class="el" href="classsre_1_1console_1_1_token.html#a6e95ac2e899711fb542486d1483e5612a1771c3bbad1779055da2f3f701d1669a">sre::console::Token</a>
+</li>
+<li>ERROR
+: <a class="el" href="classsre_1_1console_1_1_token.html#a6e95ac2e899711fb542486d1483e5612ac4f8c2460b34cc15e50af5f8b63fd324">sre::console::Token</a>
+</li>
 <li>exists()
-: <a class="el" href="classsre_1_1_window.html#a91197bf37f65fc3ba4fa053ad1d304e8">sre::Window</a>
+: <a class="el" href="classsre_1_1_window.html#aeaf899decf52aa12917fd0f88ccfd356">sre::Window</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
+<li>FLOAT
+: <a class="el" href="classsre_1_1console_1_1_variable.html#ad824151969a1987bf3434adf690370ffa0c2daa579368b494deb476fd72f8f2ba">sre::console::Variable</a>
+</li>
+<li>FLOAT_LIT
+: <a class="el" href="classsre_1_1console_1_1_token.html#a6e95ac2e899711fb542486d1483e5612ae8afebbce291f5dd73d60ee174e745f0">sre::console::Token</a>
+</li>
+<li>forwardCompat()
+: <a class="el" href="classsre_1_1_context_hints.html#a78b69b7ac680a52b0b6b9c9056ffbadf">sre::ContextHints</a>
+</li>
+<li>FramebufferHints()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#aa18ea5fce51bf4eb420758555cba934f">sre::FramebufferHints</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>GammaRamp()
+: <a class="el" href="classsre_1_1_gamma_ramp.html#a92b7e629fd66c43a17afebae830e4752">sre::GammaRamp</a>
+</li>
+<li>getFramebufferSize()
+: <a class="el" href="classsre_1_1_window.html#a730dabd7d84c1ae5151e233f2ffd32cf">sre::Window</a>
+</li>
+<li>getGLFWattrib()
+: <a class="el" href="classsre_1_1_window_attribs.html#a97c9b631d152655348a48bacba26a1f1">sre::WindowAttribs</a>
+</li>
+<li>getGLFWgammaramp()
+: <a class="el" href="classsre_1_1_gamma_ramp.html#a68c882529936910b4aa1417e188bbbde">sre::GammaRamp</a>
+</li>
+<li>getGLFWMonitor()
+: <a class="el" href="classsre_1_1_monitor.html#aeec260f87e591b4e496a21fde226ae08">sre::Monitor</a>
+</li>
+<li>getGLFWwindow()
+: <a class="el" href="classsre_1_1_window.html#accc0b30ad06244c6e478ed2684cacef7">sre::Window</a>
+</li>
+<li>getId()
+: <a class="el" href="classsre_1_1console_1_1_command_def.html#aebc5646578a20efd13b376f2bac4185c">sre::console::CommandDef</a>
+</li>
+<li>getName()
+: <a class="el" href="classsre_1_1console_1_1_variable.html#a8168d87575c022118bbfc17c8ee9ac3d">sre::console::Variable</a>
 </li>
 <li>getPos()
-: <a class="el" href="classsre_1_1_window.html#a5c70d982f7f2a2bb5074ee37239e69b2">sre::Window</a>
+: <a class="el" href="classsre_1_1_window.html#a738824f7ec1a56ce8f837394394655b7">sre::Window</a>
+</li>
+<li>getPrimaryMonitor()
+: <a class="el" href="classsre_1_1_monitor.html#a6260db866360bde3fd9a32dc95fa1df9">sre::Monitor</a>
 </li>
 <li>getSize()
-: <a class="el" href="classsre_1_1_window.html#a8d424080e04c240c56603aab0df2f79d">sre::Window</a>
+: <a class="el" href="classsre_1_1_window.html#a9a7ee4adbaff7d677f151fccbc9888b6">sre::Window</a>
+</li>
+<li>getType()
+: <a class="el" href="classsre_1_1console_1_1_variable.html#a2be54da6095846e33744b11adaa671c5">sre::console::Variable</a>
+, <a class="el" href="classsre_1_1console_1_1_arg.html#a09c406eae1ed9732a03476233845cc5e">sre::console::Arg</a>
+</li>
+<li>getVal()
+: <a class="el" href="classsre_1_1console_1_1_arg.html#a718e71d67fc2b70e12fff353d0bef5d7">sre::console::Arg</a>
+, <a class="el" href="classsre_1_1console_1_1_variable.html#a8e654972495e2625cecf3051b6472099">sre::console::Variable</a>
+</li>
+<li>getVideoMode()
+: <a class="el" href="classsre_1_1_monitor.html#acf0ee1b0082ca25c6dcc3b375187e606">sre::Monitor</a>
+</li>
+<li>getVideoModes()
+: <a class="el" href="classsre_1_1_monitor.html#ac1e5482d3efbf572d240cc5540e2a214">sre::Monitor</a>
+</li>
+<li>GREEN_BITS
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a74bfe8a451c7009368f3cda7a7a07811">sre::WindowAttribs</a>
+</li>
+<li>greenBits()
+: <a class="el" href="classsre_1_1_video_mode.html#ab899ea4f13b33a24f33456cacbd746c6">sre::VideoMode</a>
+, <a class="el" href="classsre_1_1_framebuffer_hints.html#afd151831427e5b01f174367e82893eb2">sre::FramebufferHints</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>height()
+: <a class="el" href="classsre_1_1_video_mode.html#a526b11a2542f6e6325c2c9c1ec028e94">sre::VideoMode</a>
 </li>
 <li>hide()
-: <a class="el" href="classsre_1_1_window.html#a4626829d3cb9d01285f739d2bbc69b74">sre::Window</a>
+: <a class="el" href="classsre_1_1_window.html#afd5d7d00ae48a1ce8e7aa1ff704b7688">sre::Window</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>iconify()
-: <a class="el" href="classsre_1_1_window.html#a77e14a905348eae6316bcfa629bcfb9b">sre::Window</a>
+: <a class="el" href="classsre_1_1_window.html#a92978df79f18cc25d567abbd316a46e0">sre::Window</a>
+</li>
+<li>IDENTIFIER
+: <a class="el" href="classsre_1_1console_1_1_token.html#a6e95ac2e899711fb542486d1483e5612a499cfa796b47b728fb1d75dea8d48478">sre::console::Token</a>
+</li>
+<li>init()
+: <a class="el" href="classsre_1_1_window.html#a5155f0cfaee0b2cf92f2e8a87ac15b0e">sre::Window</a>
+</li>
+<li>INT
+: <a class="el" href="classsre_1_1console_1_1_variable.html#ad824151969a1987bf3434adf690370ffabee929bbb45f97995fc5ca092c54bc46">sre::console::Variable</a>
+</li>
+<li>INT_LIT
+: <a class="el" href="classsre_1_1console_1_1_token.html#a6e95ac2e899711fb542486d1483e5612a44ac64a0605410f20f51b6c266328ee5">sre::console::Token</a>
+</li>
+<li>isError()
+: <a class="el" href="classsre_1_1console_1_1_token.html#a4f75b7897438b907d24d8e1788d49acf">sre::console::Token</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
+<li>KEY
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1">sre::WindowAttribs</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>Lexer()
+: <a class="el" href="classsre_1_1console_1_1_lexer.html#a207fbb078a1c05fe134fc26788622b44">sre::console::Lexer</a>
+</li>
+<li>LOSE_CONTEXT_ON_RESET
+: <a class="el" href="classsre_1_1_window_attribs.html#affb660e7f749cff91eda6aa5ea81661ca45cf2b5a30dfacfbd295d8fb680da99e">sre::WindowAttribs</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>makeActive()
+: <a class="el" href="classsre_1_1_window.html#af4f3f8683f36405785fa4571510eb609">sre::Window</a>
+</li>
+<li>Monitor()
+: <a class="el" href="classsre_1_1_monitor.html#a2e545dce4c5d4df77be3cf4e6ea4380b">sre::Monitor</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>name()
+: <a class="el" href="classsre_1_1console_1_1_token.html#ae0b1ee4519ac3cf93063aab28e035831">sre::console::Token</a>
+</li>
+<li>next()
+: <a class="el" href="classsre_1_1console_1_1_lexer.html#adf68a3130024ecc41f132048930be0d6">sre::console::Lexer</a>
+</li>
+<li>NO_RESET_NOTIFICATION
+: <a class="el" href="classsre_1_1_window_attribs.html#affb660e7f749cff91eda6aa5ea81661ca0b875cc1aff2e51e6ab21e872ee15010">sre::WindowAttribs</a>
+</li>
+<li>NO_ROBUSTNESS
+: <a class="el" href="classsre_1_1_window_attribs.html#affb660e7f749cff91eda6aa5ea81661ca1c7ce1aab83b233ae302e31a7411120f">sre::WindowAttribs</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>OPENGL_API
+: <a class="el" href="classsre_1_1_window_attribs.html#adabf8184bbe48488b97eacd554382364a84b11559a14867a11b93494e77c6e03d">sre::WindowAttribs</a>
+</li>
+<li>OPENGL_COMPAT
+: <a class="el" href="classsre_1_1_window_attribs.html#a4958929539c61345a16200fd4d511381a8a3406db7319f28ed96998f05b3604b2">sre::WindowAttribs</a>
+</li>
+<li>OPENGL_CORE
+: <a class="el" href="classsre_1_1_window_attribs.html#a4958929539c61345a16200fd4d511381a5cd7103d5399ada722d581f2d5042922">sre::WindowAttribs</a>
+</li>
+<li>OPENGL_DEBUG
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a70ebe29b660f843171cca0d677dd8bb6">sre::WindowAttribs</a>
+</li>
+<li>OPENGL_ES_API
+: <a class="el" href="classsre_1_1_window_attribs.html#adabf8184bbe48488b97eacd554382364a008687dc34b3a6d7b76a4cae2f512b37">sre::WindowAttribs</a>
+</li>
+<li>OPENGL_FORWARD_COMPAT
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1afa02234d71586a9f399ef07e5e6f00d8">sre::WindowAttribs</a>
+</li>
+<li>OPENGL_PROFILE
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a9d6fec91ecd9292bffab3667159df540">sre::WindowAttribs</a>
+</li>
+<li>operator!=()
+: <a class="el" href="classsre_1_1console_1_1_token.html#acbd04b32542ba6f2eefdee8430a4e1cf">sre::console::Token</a>
+</li>
+<li>operator()()
+: <a class="el" href="classsre_1_1console_1_1_command_def.html#a19a8fc54aeea68192815399a327cf09e">sre::console::CommandDef</a>
+, <a class="el" href="classsre_1_1console_1_1_command_func.html#a1dba5833fb1eec23ca461756d94949c7">sre::console::CommandFunc</a>
+, <a class="el" href="classsre_1_1console_1_1_empty_command.html#ae5cf148e9e69daaec25a16589857d24b">sre::console::EmptyCommand</a>
+</li>
+<li>operator=()
+: <a class="el" href="classsre_1_1console_1_1_type.html#af3972a001c871ed5dab0e3728038958d">sre::console::Type</a>
+</li>
+<li>operator==
+: <a class="el" href="classsre_1_1console_1_1_type.html#a8676a92e0bbd8a16be9f58e1b92abed6">sre::console::Type</a>
+, <a class="el" href="classsre_1_1console_1_1_token.html#ab4efa8b9cfa8d085bcd098fa863406a0">sre::console::Token</a>
+, <a class="el" href="classsre_1_1console_1_1_command.html#aa3c787f5775435fd51ecc6f0ef2146ed">sre::console::Command</a>
+, <a class="el" href="classsre_1_1console_1_1_command_def.html#a8676a92e0bbd8a16be9f58e1b92abed6">sre::console::CommandDef</a>
+, <a class="el" href="classsre_1_1console_1_1_command.html#a8676a92e0bbd8a16be9f58e1b92abed6">sre::console::Command</a>
+, <a class="el" href="classsre_1_1console_1_1_command_def.html#aa3c787f5775435fd51ecc6f0ef2146ed">sre::console::CommandDef</a>
+, <a class="el" href="classsre_1_1console_1_1_type.html#aa3c787f5775435fd51ecc6f0ef2146ed">sre::console::Type</a>
+, <a class="el" href="classsre_1_1console_1_1_token.html#ad4c73dbeeca294ff0f8bc45579b8f019">sre::console::Token</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>Profile
+: <a class="el" href="classsre_1_1_window_attribs.html#a4958929539c61345a16200fd4d511381">sre::WindowAttribs</a>
+</li>
+<li>push()
+: <a class="el" href="classsre_1_1console_1_1_command.html#aa5709198e33be5c1399ca57bc35b8803">sre::console::Command</a>
+, <a class="el" href="classsre_1_1console_1_1_command_def.html#a43c74d4738fd5a11ab48e8e3d625d619">sre::console::CommandDef</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>RED_BITS
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1acf77e6eb33df45a6afb81f9a36c2e219">sre::WindowAttribs</a>
+</li>
+<li>redBits()
+: <a class="el" href="classsre_1_1_video_mode.html#a6d99946b690d9210d7352d3062d763d2">sre::VideoMode</a>
+, <a class="el" href="classsre_1_1_framebuffer_hints.html#a73e175bf4847c0b614b8c3e20de86dd1">sre::FramebufferHints</a>
+</li>
+<li>REFRESH_RATE
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a1632b5df68eb4103e8d4dd08a4ac33b3">sre::WindowAttribs</a>
+</li>
+<li>refreshRate()
+: <a class="el" href="classsre_1_1_video_mode.html#a01267e46cc9b09fdc62063bbe9de884c">sre::VideoMode</a>
+, <a class="el" href="classsre_1_1_framebuffer_hints.html#a04884e99d54f91f2d182e95728363e27">sre::FramebufferHints</a>
+</li>
+<li>RESIZABLE
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1ab747525108cb2e13b0fc636307d07984">sre::WindowAttribs</a>
+</li>
+<li>resizable()
+: <a class="el" href="classsre_1_1_window_hints.html#aabd7efce5a49f6c918c6e459b906a917">sre::WindowHints</a>
 </li>
 <li>restore()
-: <a class="el" href="classsre_1_1_window.html#ac12065a404bba4aaca510c33a8a338d1">sre::Window</a>
+: <a class="el" href="classsre_1_1_window.html#a39aa52b22bb5d5b580eac28f10006cfb">sre::Window</a>
+</li>
+<li>Robustness
+: <a class="el" href="classsre_1_1_window_attribs.html#affb660e7f749cff91eda6aa5ea81661c">sre::WindowAttribs</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>SAMPLES
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a4dc874ff6e9582852899cecef111c3ff">sre::WindowAttribs</a>
+</li>
+<li>samples()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#a4ad6cc3c9fa775cbb8902be669cf481d">sre::FramebufferHints</a>
+</li>
+<li>SEPARATOR
+: <a class="el" href="classsre_1_1console_1_1_token.html#a6e95ac2e899711fb542486d1483e5612a191305fc560e80971ff0aaa71f121189">sre::console::Token</a>
+</li>
+<li>set()
+: <a class="el" href="classsre_1_1console_1_1_variable.html#a643e1f576271b47f2f3c471eb9473959">sre::console::Variable</a>
+</li>
+<li>setAPIES()
+: <a class="el" href="classsre_1_1_context_hints.html#a65f08baf518834fabcb76fb58f1388d7">sre::ContextHints</a>
+</li>
+<li>setAPIGL()
+: <a class="el" href="classsre_1_1_context_hints.html#af04d78789e0a899034c92675ec2ca6e2">sre::ContextHints</a>
+</li>
+<li>setFunc()
+: <a class="el" href="classsre_1_1console_1_1_command_def.html#a14d83927d0ebf9df8937b4b948777bdb">sre::console::CommandDef</a>
+</li>
+<li>setGamma()
+: <a class="el" href="classsre_1_1_monitor.html#a0bd88e8ff59a4fe34346761f407a982f">sre::Monitor</a>
+</li>
+<li>setGammaRamp()
+: <a class="el" href="classsre_1_1_monitor.html#a4729c697d8e6c718ad42a21cdf9c516d">sre::Monitor</a>
+</li>
+<li>setLoseContextOnReset()
+: <a class="el" href="classsre_1_1_context_hints.html#adbe612c7adbd182920fdb8ece817a77c">sre::ContextHints</a>
+</li>
+<li>setNoResetNotification()
+: <a class="el" href="classsre_1_1_context_hints.html#a50d233e6e960ff9cd83b513dce933ceb">sre::ContextHints</a>
+</li>
+<li>setNoRobustness()
+: <a class="el" href="classsre_1_1_context_hints.html#adedfc6976829533d9056296a816d43d2">sre::ContextHints</a>
 </li>
 <li>setPos()
-: <a class="el" href="classsre_1_1_window.html#a48812131bb51a4633ba1063562f6baf9">sre::Window</a>
+: <a class="el" href="classsre_1_1_window.html#a5086a0b73bd0e9b68e20d32372ca43a8">sre::Window</a>
+</li>
+<li>setProfileAny()
+: <a class="el" href="classsre_1_1_context_hints.html#a366b6b4e707a9e0b9c996146bb335133">sre::ContextHints</a>
+</li>
+<li>setProfileCompat()
+: <a class="el" href="classsre_1_1_context_hints.html#ae3199f41924884407d70c337e56a9e0b">sre::ContextHints</a>
+</li>
+<li>setProfileCore()
+: <a class="el" href="classsre_1_1_context_hints.html#a6ecb4682158019203b0dab6fd1691ff5">sre::ContextHints</a>
 </li>
 <li>setSize()
-: <a class="el" href="classsre_1_1_window.html#a2152f989fa777acc3e0ca5d690893a83">sre::Window</a>
+: <a class="el" href="classsre_1_1_window.html#a6bb84cafd340414e0a449ce1937cac1e">sre::Window</a>
 </li>
 <li>setTitle()
-: <a class="el" href="classsre_1_1_window.html#a533ead00075f634a6a40cee5dd1ffa6f">sre::Window</a>
+: <a class="el" href="classsre_1_1_window.html#ab8ecdf8545df9046832619b89699a7f2">sre::Window</a>
 </li>
 <li>shouldClose()
-: <a class="el" href="classsre_1_1_window.html#a6fb020e0e9c85a42de450532e3c3ad0c">sre::Window</a>
+: <a class="el" href="classsre_1_1_window.html#a3c5ad19197be39269941987027e7af09">sre::Window</a>
 </li>
 <li>show()
-: <a class="el" href="classsre_1_1_window.html#a8f986e19a11c4c97ed8e6ad3d0e648b7">sre::Window</a>
+: <a class="el" href="classsre_1_1_window.html#acb21548a0780e90207e0de88b170f8c8">sre::Window</a>
 </li>
+<li>SRGB_CAPABLE
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1ac2621b6951b34a9c3e68845e0891527b">sre::WindowAttribs</a>
+</li>
+<li>sRGBCapable()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#ab2fc6e30787809b8b65525dee92cb27e">sre::FramebufferHints</a>
+</li>
+<li>STENCIL_BITS
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1aab7f688e6c6905eac567666dd173e7bb">sre::WindowAttribs</a>
+</li>
+<li>stencilBits()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#ab7a0d573b538872a1595a7a893552f72">sre::FramebufferHints</a>
+</li>
+<li>stereo()
+: <a class="el" href="classsre_1_1_framebuffer_hints.html#aca5de9d5475e583496e2d26c93233257">sre::FramebufferHints</a>
+</li>
+<li>STEREO
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a7165e212c9f244564c560499bfceba1d">sre::WindowAttribs</a>
+</li>
+<li>STRING
+: <a class="el" href="classsre_1_1console_1_1_variable.html#ad824151969a1987bf3434adf690370ffae6bd02393a08c01dd7efd564be6cfda7">sre::console::Variable</a>
+</li>
+<li>STRING_LIT
+: <a class="el" href="classsre_1_1console_1_1_token.html#a6e95ac2e899711fb542486d1483e5612a9680287feb563370076bce7b887dfa7d">sre::console::Token</a>
+</li>
+<li>swapBuffers()
+: <a class="el" href="classsre_1_1_window.html#af5cd76bf76295644febdecc1936ec064">sre::Window</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>toChar()
+: <a class="el" href="classsre_1_1console_1_1_variable.html#a5e6cc777cb438d9c5f101a7b2614f9f4">sre::console::Variable</a>
+</li>
+<li>toFloat()
+: <a class="el" href="classsre_1_1console_1_1_variable.html#acb2c74f0dee84b1e8274b9cae180f74f">sre::console::Variable</a>
+</li>
+<li>toInt()
+: <a class="el" href="classsre_1_1console_1_1_variable.html#a45e4ba5b6302ae1d8aac2f397dfa4fda">sre::console::Variable</a>
+</li>
+<li>TOKEN
+: <a class="el" href="classsre_1_1console_1_1_token.html#a6e95ac2e899711fb542486d1483e5612">sre::console::Token</a>
+</li>
+<li>Token()
+: <a class="el" href="classsre_1_1console_1_1_token.html#ac2fc427d790b7a7755e2c40a48cffae5">sre::console::Token</a>
+</li>
+<li>toStr()
+: <a class="el" href="classsre_1_1console_1_1_variable.html#a381ca889ec6293fd75ae59857f14a784">sre::console::Variable</a>
+</li>
+<li>toString()
+: <a class="el" href="classsre_1_1console_1_1_variable.html#a5cefe8179521feae3686826b69782425">sre::console::Variable</a>
+, <a class="el" href="classsre_1_1console_1_1_token.html#abd0d430b2b5fed005b5049a15c06a69b">sre::console::Token</a>
+</li>
+<li>Type()
+: <a class="el" href="classsre_1_1console_1_1_type.html#aa93be61dc64aa1f3bb616a600e13ec4d">sre::console::Type</a>
+</li>
+<li>type
+: <a class="el" href="classsre_1_1console_1_1_token.html#a2be15c2f883f6f5e6137b3d9469015a1">sre::console::Token</a>
+</li>
+<li>TYPE
+: <a class="el" href="classsre_1_1console_1_1_variable.html#ad824151969a1987bf3434adf690370ff">sre::console::Variable</a>
+</li>
+<li>Type()
+: <a class="el" href="classsre_1_1console_1_1_type.html#aed7d83bca29b2798a22611f2fb1c4848">sre::console::Type</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
+<li>value
+: <a class="el" href="classsre_1_1console_1_1_token.html#a8f2976d740a5306b7ae4e8a78f51aa22">sre::console::Token</a>
+</li>
+<li>Variable()
+: <a class="el" href="classsre_1_1console_1_1_variable.html#a8a99c64247996eebbb358220cd8c80c8">sre::console::Variable</a>
+</li>
+<li>VERSION_MAJOR
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a428a5f8e80e9feb5e6b370e8eea2929a">sre::WindowAttribs</a>
+</li>
+<li>VERSION_MINOR
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1a59dbcb1db84d52182238f4b676aa60dd">sre::WindowAttribs</a>
+</li>
+<li>versionMajor()
+: <a class="el" href="classsre_1_1_context_hints.html#a292cc51ca6f794ea2d7180c757c61433">sre::ContextHints</a>
+</li>
+<li>versionMinor()
+: <a class="el" href="classsre_1_1_context_hints.html#a7649b28459343c8949f1729f904d6525">sre::ContextHints</a>
+</li>
+<li>VideoMode()
+: <a class="el" href="classsre_1_1_video_mode.html#a730acbed0b9a468e7bc38b1801afa67a">sre::VideoMode</a>
+</li>
+<li>VISIBLE
+: <a class="el" href="classsre_1_1_window_attribs.html#aa360b53b061a3d945e2d34be8a38d0f1af54df9a2da84a62b20479fe9161eb466">sre::WindowAttribs</a>
+</li>
+<li>visible()
+: <a class="el" href="classsre_1_1_window_hints.html#a36e55a493aa0c9e05c87dd1b72d7af97">sre::WindowHints</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
 <li>width()
-: <a class="el" href="class_video_mode.html#ad12fedb16ff07552df466c2519162588">VideoMode</a>
+: <a class="el" href="classsre_1_1_video_mode.html#ab17f558d6c03f83f52e5811ee80cc2f4">sre::VideoMode</a>
+</li>
+<li>Window()
+: <a class="el" href="classsre_1_1_window.html#a602c0a8bdae8606334d35b325ffa61d8">sre::Window</a>
+</li>
+<li>WindowHints()
+: <a class="el" href="classsre_1_1_window_hints.html#a8bbcbca546de779faf47840bc9ed70e8">sre::WindowHints</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_0x7e"></a>- ~ -</h3><ul>
+<li>~Console()
+: <a class="el" href="class_console.html#a32e8c79c8579b1b076e53848c540d4e7">Console</a>
+</li>
+<li>~Lexer()
+: <a class="el" href="classsre_1_1console_1_1_lexer.html#aaf08b499ee42469bba3c7a8d7171942f">sre::console::Lexer</a>
+</li>
+<li>~Variable()
+: <a class="el" href="classsre_1_1console_1_1_variable.html#ad337d49af8640b9e091eb99a8562c1d6">sre::console::Variable</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 1 2013 14:11:54 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.3.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Sun Mar 30 2014 20:52:01 for SRE by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
 </body>
 </html>

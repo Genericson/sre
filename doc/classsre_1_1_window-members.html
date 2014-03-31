@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>My Project: Member List</title>
+<title>SRE: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -22,8 +29,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">SRE
    </div>
+   <div id="projectbrief">Experimental OpenGL Rendering Engine</div>
   </td>
  </tr>
  </tbody>
@@ -37,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -61,15 +70,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classsre_1_1_window.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -78,11 +103,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>sre</b></li><li class="navelem"><a class="el" href="classsre_1_1_window.html">Window</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">sre::Window Member List</div>  </div>
@@ -91,34 +111,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classsre_1_1_window.html">sre::Window</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a91197bf37f65fc3ba4fa053ad1d304e8">exists</a>() const </td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getFramebufferSize</b>() const  (defined in <a class="el" href="classsre_1_1_window.html">sre::Window</a>)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getFramebufferSize</b>() (defined in <a class="el" href="classsre_1_1_window.html">sre::Window</a>)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getGLFWwindow</b>() (defined in <a class="el" href="classsre_1_1_window.html">sre::Window</a>)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a5c70d982f7f2a2bb5074ee37239e69b2">getPos</a>() const </td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a8d424080e04c240c56603aab0df2f79d">getSize</a>() const </td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a4626829d3cb9d01285f739d2bbc69b74">hide</a>()</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a77e14a905348eae6316bcfa629bcfb9b">iconify</a>()</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>init</b>() (defined in <a class="el" href="classsre_1_1_window.html">sre::Window</a>)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>makeActive</b>() (defined in <a class="el" href="classsre_1_1_window.html">sre::Window</a>)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#ac12065a404bba4aaca510c33a8a338d1">restore</a>()</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a48812131bb51a4633ba1063562f6baf9">setPos</a>(int xPos, int yPos)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a91152fb8fe616c17fd16a2c243f34556">setPos</a>(ivec2 pos)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a21298af7780e4b1c43b5a8bc2e3cab18">setSize</a>(int width, int height)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a2152f989fa777acc3e0ca5d690893a83">setSize</a>(ivec2 size)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a533ead00075f634a6a40cee5dd1ffa6f">setTitle</a>(std::string title)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a0b01b25e5210b5164ef9f4c28293b4f6">shouldClose</a>() const </td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a6fb020e0e9c85a42de450532e3c3ad0c">shouldClose</a>(int gl_tf)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a8f986e19a11c4c97ed8e6ad3d0e648b7">show</a>()</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>swapBuffers</b>() (defined in <a class="el" href="classsre_1_1_window.html">sre::Window</a>)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Window</b>(GLFWwindow *window) (defined in <a class="el" href="classsre_1_1_window.html">sre::Window</a>)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Window</b>(const int width=640, const int height=480, const std::string &amp;title=&quot;OpenGL&quot;, const Hints &amp;hints=DefaultHints(), const Monitor &amp;monitor=Monitor(nullptr), const Window &amp;share=Window(nullptr)) (defined in <a class="el" href="classsre_1_1_window.html">sre::Window</a>)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#aeaf899decf52aa12917fd0f88ccfd356">exists</a>() const </td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a730dabd7d84c1ae5151e233f2ffd32cf">getFramebufferSize</a>() const </td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#accc0b30ad06244c6e478ed2684cacef7">getGLFWwindow</a>()</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a738824f7ec1a56ce8f837394394655b7">getPos</a>() const </td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a9a7ee4adbaff7d677f151fccbc9888b6">getSize</a>() const </td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#afd5d7d00ae48a1ce8e7aa1ff704b7688">hide</a>()</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a92978df79f18cc25d567abbd316a46e0">iconify</a>()</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a5155f0cfaee0b2cf92f2e8a87ac15b0e">init</a>()</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#af4f3f8683f36405785fa4571510eb609">makeActive</a>()</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a39aa52b22bb5d5b580eac28f10006cfb">restore</a>()</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a5086a0b73bd0e9b68e20d32372ca43a8">setPos</a>(int xPos, int yPos)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a1dd04077a0f50bd0b1399058fe4f7dc2">setPos</a>(const ivec2 &amp;pos)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a6bb84cafd340414e0a449ce1937cac1e">setSize</a>(int width, int height)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a5da4f76fa3a1827562c070b5a02bb6c6">setSize</a>(const ivec2 &amp;size)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#ab8ecdf8545df9046832619b89699a7f2">setTitle</a>(const std::string &amp;title)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#abe818be1ff8d893c95918a3dd0a76e71">shouldClose</a>() const </td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a3c5ad19197be39269941987027e7af09">shouldClose</a>(int gl_tf)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#acb21548a0780e90207e0de88b170f8c8">show</a>()</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#af5cd76bf76295644febdecc1936ec064">swapBuffers</a>()</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsre_1_1_window.html#a602c0a8bdae8606334d35b325ffa61d8">Window</a>(GLFWwindow *window)</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsre_1_1_window.html#a0bd1a6e1bfc8274af21ff22e518d4c89">Window</a>(const int width=640, const int height=480, const std::string &amp;title=&quot;OpenGL&quot;, const Hints &amp;hints=DefaultHints(), const Monitor &amp;monitor=Monitor(nullptr), const Window &amp;share=Window(nullptr))</td><td class="entry"><a class="el" href="classsre_1_1_window.html">sre::Window</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 1 2013 14:11:54 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.3.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Sun Mar 30 2014 20:52:01 for SRE by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
 </body>
 </html>
