@@ -1,27 +1,3 @@
-/home/genericson/workspace/sre/test.cpp:24: Warning: include file GL/glew.h not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/test.cpp:25: Warning: include file glm/glm.hpp not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/test.cpp:26: Warning: include file string not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/test.cpp:27: Warning: include file iostream not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/test.cpp:28: Warning: include file stdexcept not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/test.cpp:29: Warning: include file thread not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/test.cpp:30: Warning: include file atomic not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/test.cpp:31: Warning: include file sstream not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/test.cpp:32: Warning: include file memory not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/command.hpp:4: Warning: include file list not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/window.hpp:4: Warning: include file GLFW/glfw3.h not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/window.hpp:5: Warning: include file glm/glm.hpp not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/window.hpp:6: Warning: include file string not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/window.hpp:7: Warning: include file map not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/hints.hpp:4: Warning: include file GLFW/glfw3.h not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/hints.hpp:5: Warning: include file map not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/hints.hpp:6: Warning: include file iostream not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/monitor.hpp:5: Warning: include file list not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/parser.hpp:4: Warning: include file map not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/command.hpp:4: Warning: include file list not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/variable.hpp:4: Warning: include file memory not found, perhaps you forgot to add its directory to INCLUDE_PATH?
-/home/genericson/workspace/sre/parser.cpp:13: warning: documented symbol `void sre::console::CommandMap::add' was not declared or defined.
-/home/genericson/workspace/sre/parser.cpp:20: warning: documented symbol `sre::console::Parser::Parser' was not declared or defined.
-/home/genericson/workspace/sre/parser.cpp:31: warning: documented symbol `sre::console::Parser::~Parser' was not declared or defined.
 /home/genericson/workspace/sre/window.cpp:14: warning: The following parameters of sre::Window::Window(const int width=640, const int height=480, const std::string &title="OpenGL", const Hints &hints=DefaultHints(), const Monitor &monitor=Monitor(nullptr), const Window &share=Window(nullptr)) are not documented:
   parameter 'hints'
 /home/genericson/workspace/sre/window.cpp:151: warning: argument 'returns' of command @param is not found in the argument list of sre::Window::shouldClose(int gl_tf)

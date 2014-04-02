@@ -52,7 +52,7 @@ PROJECT_LOGO           =
 # If a relative path is entered, it will be relative to the location 
 # where doxygen was started. If left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = html
+OUTPUT_DIRECTORY       = ../../sre-website/doc
 
 # If the CREATE_SUBDIRS tag is set to YES, then doxygen will create 
 # 4096 sub-directories (in 2 levels) under the output directory of each output 
@@ -557,7 +557,7 @@ ENABLED_SECTIONS       =
 # documentation can be controlled using \showinitializer or \hideinitializer 
 # command in the documentation regardless of this setting.
 
-MAX_INITIALIZER_LINES  = 30
+MAX_INITIALIZER_LINES  = 20
 
 # Set the SHOW_USED_FILES tag to NO to disable the list of files generated 
 # at the bottom of the documentation of classes and structs. If set to YES the 
@@ -670,23 +670,15 @@ WARN_LOGFILE           = /home/genericson/workspace/sre/doxygen/doxygen.log
 INPUT                  = . \
                          "../monitor.hpp" \
                          "../settings.cpp" \
-                         "../variable.hpp" \
-                         "../test.cpp" \
                          "../hints.cpp" \
-                         "../command.cpp" \
-                         "../variable.cpp" \
                          "../testWindow.cpp" \
                          "../monitor.cpp" \
-                         "../console.cpp" \
-                         "../console.h" \
                          "../settings.hpp" \
                          "../window.hpp" \
-                         "../lexer.cpp" \
                          "../window.cpp" \
-                         "../command.hpp" \
-                         "../lexer.hpp" \
-                         "../parser.cpp" \
-                         "../hints.hpp"
+                         "../hints.hpp" \
+                         ../shader.cpp \
+                         ../shader.hpp
 
 # This tag can be used to specify the character encoding of the source files 
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is 
@@ -899,7 +891,7 @@ GENERATE_HTML          = YES
 # If a relative path is entered the value of OUTPUT_DIRECTORY will be 
 # put in front of it. If left blank `html' will be used as the default path.
 
-HTML_OUTPUT            = html
+HTML_OUTPUT            = .
 
 # The HTML_FILE_EXTENSION tag can be used to specify the file extension for 
 # each generated HTML page (for example: .htm,.php,.asp). If it is left blank 

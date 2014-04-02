@@ -18,7 +18,7 @@ Shader::Shader( )
 
 Shader::~Shader()
 {
-    //dtor
+    glDeleteShader(this->shader);
 }
 
 /** \class VertexShader
@@ -26,34 +26,59 @@ Shader::~Shader()
 
 VertexShader::VertexShader() {
     //Create a vertex shader
-    GLuint sh = glCreateShader(GL_VERTEX_SHADER);
-    if (sh == 0) {
+    GLuint shader = glCreateShader(GL_VERTEX_SHADER);
+        // if gl shader object allocation was unsuccessful, stop and send notification
+        // to error console
+    if (shader == 0) {
         std::cerr<<"Vertex shader creation failed!\n";
     }
     else {
+            // save shader id
+        this->shader = shader;
             //Shader sourcecode (default)
         this->source = vertexSource;
-        glShaderSource(sh, 1, &source, NULL);
+        glShaderSource(shader, 1, &source, NULL);
             //Attempt to compile the shader...
-        glCompileShader(sh);
+        glCompileShader(shader);
             //get compilation status
         GLint * param;
-        glGetShaderiv(sh, GL_COMPILE_STATUS, param);
+        glGetShaderiv(shader, GL_COMPILE_STATUS, param);
             // if compilation is unsuccessfull:
         if(param) {
                 //print out log info
-            char * infoLog = new char[256];
-            glGetShaderInfoLog(sh, 255, NULL, infoLog);
-            std::cerr<<infoLog<<std::endl;
+            char * infoLog = new char[logLength];
+            glGetShaderInfoLog( shader, logLength - 1, NULL, infoLog );
+            // copy logLength characters of shader's error log is saved
+            errorLog += infoLog;
+            std::cerr<<errorLog;
+        } else {  // compilation is successful
+
+
+
+
         }
     }
-}
+} // VertexShader
 
 /** \class FragmentShader
+ *  ToDo
  */
 
 /** \class ShaderProgram
- *
+ *  ToDo
  */
 
-} // namespace shader
+ShaderProgram::ShaderProgram() {
+        //create shader program;
+    GLuint program = glCreateProgram();
+    this->program = program;
+}
+
+ShaderProgram::~ShaderProgram() {
+    glDeleteProgram(this->program);
+}
+void ShaderProgram::attach(Shader shader) {
+    glAttachShader(this->program, shader.getId());
+}
+
+} // namespace sre

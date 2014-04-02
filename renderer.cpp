@@ -61,6 +61,8 @@ int Renderer::init()
 
     // shader
     VertexShader vertexShader = VertexShader();
+    ShaderProgram shaderProgram = ShaderProgram();
+    shaderProgram.attach(vertexShader);
 
     glfwSetKeyCallback(win.getGLFWwindow(), key_callback);
     return 0;

@@ -3,34 +3,34 @@
 
 namespace sre {
 
+/// a basic hard-codded vertex shader
 static const char* vertexSource =
-        "#version 150\n"
-        "in vec2 position;\n"
-        "in vec3 color;\n"
-        "out vec3 Color;\n"
-        "void main() {\n"
-        "	Color = position.xxy;\n"
-        "	gl_Position = vec4( position, 0.0, 1.0 );\n"
+        "#version 330\n"
+        "layout(location = 0) in vec4 vPosition;\n"
+        "void main() {"
+        "	gl_Position = vPosition;\n"
         "}";
+/// a basic hard-coded fragment shader
 static const char* fragmentSource =
-        "#version 150\n"
-        "in vec3 Color;\n"
-        "out vec4 outColor;\n"
+        "#version 33.\n"
+        "out vec4 fColor;\n"
         "void main() {\n"
-        "	outColor = vec4( Color, 1.0 );\n"
+        "	fColor = vec4( 1.0, 1.0, 1.0, 1.0 );\n"
         "}";
 
 class Shader
 {
 public:
     /** Default constructor */
-    Shader();
+    Shader ();
     /** Default destructor */
-    virtual ~Shader();
+    virtual ~Shader ();
+    GLuint getId () { return this->shader; }
 protected:
-    GLuint shader;
-    const char* source;
-    unsigned int id;
+    GLuint shader; ///< the OpenGL id of the shader.
+    const char* source; ///< the shader source code c string
+    const int logLength = 256;
+    std::string errorLog;
 private:
 
 };
@@ -45,6 +45,18 @@ class FragmentShader : public Shader
 {
 public:
     FragmentShader();
+};
+
+//--- Shader Program ---//
+
+class ShaderProgram
+{
+public:
+    ShaderProgram();
+    ~ShaderProgram();
+    void attach (Shader shader);
+private:
+    GLuint program;
 };
 
 } //namespace sre
